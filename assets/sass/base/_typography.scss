@@ -35,16 +35,23 @@ body {
     }
   }
 
-  ul, ol {
+  ul,
+  ol {
     @include s.my(5);
     @include s.pl(6);
   }
 
-  ul { list-style-type: disc; }
-  ol { list-style-type: decimal; }
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style-type: decimal;
+  }
 
   // DEFINITION LIST
-  dl { @include s.my(5); }
+  dl {
+    @include s.my(5);
+  }
 
   dt {
     @include s.pb(1);
@@ -99,13 +106,17 @@ body {
       }
     }
 
-    td { vertical-align: baseline; }
+    td {
+      vertical-align: baseline;
+    }
   }
 
   tfoot {
     border-top: 1px solid var(--color-border-default);
 
-    td { vertical-align: top; }
+    td {
+      vertical-align: top;
+    }
   }
 
   // CODE
@@ -213,5 +224,51 @@ body {
   }
   &--h6 {
     font-size: v.$text-xl;
+  }
+}
+
+.highlight {
+  position: relative;
+
+  &::before,
+  & code::before {
+    font-family: var(--font-mono);
+    font-size: v.$text-sm;
+
+    border: 1px solid var(--color-border-default);
+    border-bottom: none;
+    margin-bottom: -1px;
+    color: var(--color-text-muted);
+    background-color: var(--color-bg-second);
+    padding: 0.1rem 0.75rem;
+    border-radius: 0.25rem 0.25rem 0rem 0rem;
+    position: absolute;
+    bottom: 100%;
+  }
+
+  &::before {
+    content: attr(file);
+    right: 0;
+  }
+
+  pre {
+    padding: 1rem;
+    margin-block: 3rem;
+    background-color: var(--color-bg-second);
+    border: 1px solid var(--color-border-default);
+    box-shadow: var(--color-shadow-default);
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) var(--color-bg-default);
+  }
+
+  code {
+    &::before {
+      content: 'Lang: ' attr(data-lang);
+      text-transform: capitalize;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+    }
   }
 }

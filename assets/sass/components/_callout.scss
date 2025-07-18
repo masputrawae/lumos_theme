@@ -1,0 +1,21 @@
+.callout {
+  border: 1px solid var(--callout-border, #999);
+  background-color: var(--callout-bg, #f0f0f0);
+  display: block;
+  margin: 1rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--callout-border, #999);
+    color: var(--callout-color, #000);
+    margin-bottom: -1px;
+    cursor: pointer;
+  }
+
+  &__body {
+    padding: 1rem;
+  }
+}

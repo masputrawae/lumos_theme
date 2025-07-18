@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/spacing' as s;
+
+// Image
+.figure {
+  @include s.m(4);
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  &__image {
+    @include m.border-default;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  &--left,
+  &--right {
+    max-width: 320px;
+  }
+
+  &--left {
+    float: left;
+    align-items: start;
+    text-align: left;
+  }
+
+  &--right {
+    float: right;
+    align-items: end;
+    text-align: right;
+  }
+
+  &__caption {
+    @include s.mt(2);
+    font-size: v.$text-3xs;
+    color: var(--color-text-muted);
+    max-width: 320px;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
