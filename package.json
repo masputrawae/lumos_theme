@@ -1,0 +1,26 @@
+{
+  "name": "lumos_theme",
+  "version": "1.0.0",
+  "description": "A clean and elegant Hugo theme for learners, writers, and curious minds. Built with simplicity and focus in mind.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masputrawae/lumos_theme.git"
+  },
+  "keywords": [
+    "hugo",
+    "theme",
+    "docs",
+    "digital-garden"
+  ],
+  "author": "Putra Jaya",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/masputrawae/lumos_theme/issues"
+  },
+  "homepage": "https://github.com/masputrawae/lumos_theme#readme"
+}
