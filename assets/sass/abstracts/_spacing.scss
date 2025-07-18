@@ -1,0 +1,26 @@
+/* =====================
+   BASE SCALE
+   ===================== */
+$base-scale: 0.25rem
+
+/* =====================
+   PADDING UTILITIES
+   ===================== */
+@mixin p($scale) { padding: ($scale * $base-scale);}
+@mixin pt($scale) { padding-block-start: ($scale * $base-scale);}
+@mixin pr($scale) { padding-inline-end: ($scale * $base-scale);}
+@mixin pb($scale) { padding-block-end: ($scale * $base-scale);}
+@mixin pl($scale) { padding-inline-start: ($scale * $base-scale);}
+@mixin px($scale) { padding-inline: ($scale * $base-scale);}
+@mixin py($scale) { padding-block: ($scale * $base-scale);}
+
+/* =====================
+   MARGIN UTILITIES
+   ===================== */
+@mixin m($scale) { margin: ($scale * $base-scale);}
+@mixin mt($scale) { margin-block-start: ($scale * $base-scale);}
+@mixin mr($scale) { margin-inline-end: ($scale * $base-scale);}
+@mixin mb($scale) { margin-block-end: ($scale * $base-scale);}
+@mixin ml($scale) { margin-inline-start: ($scale * $base-scale);}
+@mixin mx($scale) { margin-inline: ($scale * $base-scale);}
+@mixin my($scale) { margin-block: ($scale * $base-scale);}
