@@ -1,4 +1,15 @@
 baseURL       : 'https://masputrawae.github.io/READMEnya-ada-nanti/'
 languageCode  : 'id'
 title         : 'My Garden'
+enableEmoji   : true
 
+mediaType: "application/json"
+outputFormats:
+  search:
+    mediaType: "application/json"
+    baseName: "search"
+    isPlainText: true
+    notAlternative: true
+
+outputs:
+  home: ["html", "rss", "sitemap", "search"]

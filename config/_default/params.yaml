@@ -1,53 +1,75 @@
-author        : 'Putra Jaya'
-description   : |
+# Copyright (optional, but it's good practice to keep it for attribution)
+copyright: Theme by Putra Jaya
+
+# Basic site metadata (required for proper SEO and social sharing)
+author      : 'Putra Jaya'  # Site author name
+description : |             # A short description of your site (used in meta tags)
   In nostrud ut sunt cupidatat amet. Nostrud laboris occaecat qui sit adipisicing Lorem exercitation culpa sunt ut exercitation mollit. Deserunt sunt eu eiusmod amet dolore tempor do tempor culpa esse.
+twitter     : '@Masputrawae'  # Your Twitter/X username (for metadata)
 
-# logo          : assets/images/logo.png
-icon          : '💡'
-image         : assets/images/default-image.webp
+# Main branding: choose one — either a logo (image) or an icon (emoji)
+# Only one should be active at a time
 
+# logo     : assets/images/logo.png    # Custom logo image (commented out)
+icon        : '💡'                      # Emoji as the main site icon
+image       : assets/images/default-image.webp  # Default image for social sharing (OG image)
+
+# GitHub repository information (recommended if your theme is open-source)
 github:
-  url         : https://github.com/masputrawae
-  repo        : /READMEnya-ada-nanti/
-  branch      : main
+  url     : https://github.com/masputrawae      # Your GitHub profile URL
+  repo    : /READMEnya-ada-nanti/               # Repository path for the theme
+  branch  : main                                # Default branch of the repository
 
+# Social media links (you can add or remove platforms)
+# Icons are based on Bootstrap Icons — use the icon name
 social:
-  - name      : Facebook
-    url       : https://facebook.com
-    icon      : facebook
-  - name      : Twitter x
-    url       : https://x.com/
-    icon      : twitter-x
-  - name      : Discord
-    url       : https://Discord/
-    icon      : discord
-  - name      : Github
-    url       : https://github.com/masputrawae/
-    icon      : github
+  - name  : Facebook
+    url   : https://facebook.com
+    icon  : facebook
 
+  - name  : Twitter X
+    url   : https://x.com/
+    icon  : twitter-x
+
+  - name  : Discord
+    url   : https://discord.com/
+    icon  : discord
+
+  - name  : GitHub
+    url   : https://github.com/masputrawae/
+    icon  : github
+
+# Favicon setup (optional but recommended for branding and mobile support)
+# You can use one or multiple sizes for full browser/device compatibility
 favicons:
-  - rel       : icon
-    type      : image/x-icon
-    href      : assets/favicons/favicon.ico
-  - rel       : apple-touch-icon
-    type      : image/png
-    size      : 180x180
-    href      : assets/favicons/apple-touch-icon.png
-  - rel       : icon
-    type      : image/png
-    size      : 32x32
-    href      : assets/favicons/favicon-32x32.png
-  - rel       : icon
-    type      : image/png
-    size      : 16x16
-    href      : assets/favicons/favicon-16x16.png
-  - rel       : icon
-    type      : image/png
-    size      : 192x192
-    href      : assets/favicons/android-chrome-192x192.png
-  - rel       : icon
-    type      : image/png
-    size      : 512x512
-    href      : assets/favicons/android-chrome-512x512.png
-  - rel       : manifest
-    href      : assets/favicons/manifest.json
+  - rel   : icon
+    type  : image/x-icon
+    href  : assets/favicons/favicon.ico
+
+  - rel   : apple-touch-icon
+    type  : image/png
+    size  : 180x180
+    href  : assets/favicons/apple-touch-icon.png
+
+  - rel   : icon
+    type  : image/png
+    size  : 32x32
+    href  : assets/favicons/favicon-32x32.png
+
+  - rel   : icon
+    type  : image/png
+    size  : 16x16
+    href  : assets/favicons/favicon-16x16.png
+
+  - rel   : icon
+    type  : image/png
+    size  : 192x192
+    href  : assets/favicons/android-chrome-192x192.png
+
+  - rel   : icon
+    type  : image/png
+    size  : 512x512
+    href  : assets/favicons/android-chrome-512x512.png
+
+  - rel   : manifest
+    href  : assets/favicons/manifest.json  # PWA support (Web App manifest file)

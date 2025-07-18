@@ -1,3 +1,4 @@
+@use '../abstracts/mixins' as m;
 @use './dark' as dark;
 @use './light' as light;
 
@@ -5,5 +6,11 @@
    CUSTOM PROPERTY
    ===================== */
 :root {
+  &[data-theme='dark'] {
+    @include m.theme-vars(dark.$dark);
+  }
 
+  &[data-theme='light'] {
+    @include m.theme-vars(dark.$dark);
+  }
 }

@@ -1,14 +1,17 @@
 {{- define "main" }}
-  {{- partial "content" . }}
-  {{- if in (slice "section" "taxonomy" "term") }}
+  {{- if in (slice "home" "page") .Kind  }}
+    {{ partial "layouts/content" . }}
+  {{- else if in (slice "section" "taxonomy" "term") .Kind }}
+    {{ partial "layouts/content" . }}
+
     <ul>
-      {{- range .Pages }}
+      {{ range .Pages }}
         <li>
-          <a href="{{- .RelPermalink }}">
-            {{- .LinkTitle }}
+          <a href="{{ .RelPermalink }}">
+            {{ .LinkTitle }}
           </a>
         </li>
-      {{- end }}
+      {{ end }}
     </ul>
   {{- else }}
     {{- errorf "Unsupported page kind: %s" .Kind }}

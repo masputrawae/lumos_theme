@@ -22,7 +22,7 @@
   </nav>
 
   <nav class="header__right-col">
-    {{ with site.Params.social }}
+    {{ range site.Params.social }}
       <a 
         href="{{ .url }}" 
         target="_blank" 

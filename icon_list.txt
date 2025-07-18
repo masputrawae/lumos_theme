@@ -40,6 +40,7 @@ type-h5
 type-h6
 chevron-double-left
 chevron-double-right
+sun
 
 alexa
 behance

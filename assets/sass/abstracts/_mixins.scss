@@ -37,8 +37,8 @@
 /* =====================
    TRANSITION UTILITY
    ===================== */
-@mixin transition($duration: 0.3s, $properties...) {
-  transition: $properties $duration ease-in-out;
+@mixin transition($properties...) {
+  transition:  $properties, 0.3s ease-in-out;
 }
 
 /* =====================
@@ -108,5 +108,28 @@
   &:hover,
   &:focus {
     @content;
+  }
+}
+
+/* =====================
+   SCROLL BAR CUSTOM
+   ===================== */
+@mixin custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-default) var(--color-border-default);
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-border-default);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-accent-default);
+    border-radius: 4px;
   }
 }

@@ -4,7 +4,8 @@
   "description": "A clean and elegant Hugo theme for learners, writers, and curious minds. Built with simplicity and focus in mind.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:floating": "esbuild bundle-floating-ui.js --bundle --minify --format=esm --outfile=assets/js/module_external/floating-ui.bundle.js"
   },
   "repository": {
     "type": "git",
