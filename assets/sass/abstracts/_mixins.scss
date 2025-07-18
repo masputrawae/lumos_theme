@@ -26,6 +26,15 @@
 }
 
 /* =====================
+   TOKEN GENERATOR
+   ===================== */
+@mixin theme-vars($map) {
+  @each $key, $value in $map {
+    --#{$key}: #{$value};
+  }
+}
+
+/* =====================
    TRANSITION UTILITY
    ===================== */
 @mixin transition($duration: 0.3s, $properties...) {

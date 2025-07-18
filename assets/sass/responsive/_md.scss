@@ -1,0 +1,9 @@
+@use '../abstracts/breakpoints' as b;
+
+@include b.min(md){
+  
+}
+
+@include b.max(md){
+
+}

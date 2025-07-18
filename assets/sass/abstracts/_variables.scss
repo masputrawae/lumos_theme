@@ -1,36 +1,64 @@
+@use 'sass:math';
+
 /* =====================
    BREAKPOINTS
    ===================== */
+   
 $breakpoints: (
-  
+  3xs : 16rem,
+  2xs : 18rem,
+  xs  : 20rem,
+  sm  : 36rem,
+  md  : 48rem,
+  lg  : 62rem,
+  xl  : 75rem,
+  2xl : 87.5rem
 );
 
 /* =====================
    FONT FAMILY
    ===================== */
-$font-sans: ;
-$font-serif: ;
-$font-mono: ;
+
+$font-system        : 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
+$font-mono-system   : 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+
+$font-sans  : '"Noto Sans",sans-serif';
+$font-serif : '"Noto Serif", serif';
+$font-mono  : '"Noto Sans Mono", monospace';
 
 /* =====================
    TYPE SCALE FONT SIZE
+>------------------------------------<
+Common Types of Scale Ratios
+Some common ratios often used in design:
+- Minor Second (1.067)
+- Major Second (1.125)
+- Minor Third (1.200)
+- Major Third (1.250)
+- Perfect Fourth (1.333)
+- Augmented Fourth (1.414)
+- Perfect Fifth (1.500)
+- Golden Ratio (1.618)
+>------------------------------------<
    ===================== */
-$scale: ;
-$text-base: ;
 
+$text-base    : 14px;
+$scale-ratio  : 1.067;
 
-$text-xs: ;
-$text-2xs: ;
-$text-3xs: ;
-$text-sm: ;
-$text-lg: ;
-$text-xl: ;
-$text-2xl: ;
-$text-3xl: ;
-$text-4xl: ;
-$text-5xl: ;
-$text-6xl: ;
-$text-7xl: ;
-$text-8xl: ;
-$text-9xl: ;
-$text-10xl: ;
+@function scale($step) { @return math.div( math.div(math.round($text-base * pow($scale-ratio, $step) * 100), 100), $text-base) * 1rem;}
+
+$text-xs  : scale(-4);
+$text-2xs : scale(-3);
+$text-3xs : scale(-2);
+$text-sm  : scale(-1);
+$text-lg  : scale(1);
+$text-xl  : scale(2);
+$text-2xl : scale(3);
+$text-3xl : scale(4);
+$text-4xl : scale(5);
+$text-5xl : scale(6);
+$text-6xl : scale(7);
+$text-7xl : scale(8);
+$text-8xl : scale(9);
+$text-9xl : scale(10);
+$text-10xl: scale(11);

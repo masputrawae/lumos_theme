@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/masputrawae/lumos_theme/issues"
   },
-  "homepage": "https://github.com/masputrawae/lumos_theme#readme"
+  "homepage": "https://github.com/masputrawae/lumos_theme#readme",
+  "dependencies": {
+    "@floating-ui/dom": "^1.7.2",
+    "bootstrap-icons": "^1.13.1",
+    "fuse.js": "^7.1.0"
+  }
 }

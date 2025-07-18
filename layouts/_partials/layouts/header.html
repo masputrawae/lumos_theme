@@ -1,0 +1,42 @@
+<header class="header">
+
+  <nav class="header__left-col">
+    <a href="{{ site.BaseURL | relURL }}" class="brand">
+      {{ with site.Params.logo }}
+        <img 
+          src="{{ . | relURL }}" 
+          alt="{{ site.Title }}" 
+          class="brand__logo" 
+          width="50" 
+          height="50" 
+          loading="eager"
+        >
+      {{ else }}
+        <span class="brand__emoji emoji">{{ site.Params.emoji }}</span>
+      {{ end }}
+      <strong class="brand__title">{{ site.Title }}</strong>
+    </a>
+    <button class="header__btn header__btn--search-open" data-modal="searchBar">
+      {{ partial "components/icon" (dict "name" "search") }}
+    </button>
+  </nav>
+
+  <nav class="header__right-col">
+    {{ with site.Params.social }}
+      <a 
+        href="{{ .url }}" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="{{ .name }}"
+        class="header__btn"
+      >
+        {{ partial "components/icon" (dict "name" .icon ) }}
+      </a>
+    {{ end }}
+
+    <button class="header__btn" id="switchTheme">
+      {{ partial "components/icon" (dict "name" "sun") }}
+      {{ partial "components/icon" (dict "name" "moon-stars") }}
+    </button>
+  </nav>
+</header>
