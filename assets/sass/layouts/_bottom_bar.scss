@@ -5,6 +5,7 @@
 .bottom-bar {
   @include m.flex-justify(space-between, center);
   @include s.px(5);
+
   border-top: 1px solid var(--color-border-default);
   position: fixed;
   inset-block-end: 0;
@@ -17,6 +18,7 @@
     @include s.p(3);
     @include m.border-default();
     @include m.flex-justify(center, center);
+    
     background-color: var(--color-bg-default);
 
     .bi {

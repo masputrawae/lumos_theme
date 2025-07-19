@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html 
-  lang="{{ site.Language.LanguageCode }}" 
+  lang="{{ .Params.langCode | default site.Language.LanguageCode }}" 
   dir="{{ or site.Language.LanguageDirection `ltr` }}" 
   data-theme="dark"
 >
@@ -8,6 +8,7 @@
 <head>
   {{ partial "headed/meta" . }}
   {{ partial "headed/fonts" . }}
+  {{ partial "headed/seo" . }}
   {{ partial "headed/assets" . }}
 </head>
 
@@ -28,6 +29,7 @@
   <div id="overlay" class="overlay"></div>
   {{ partial "components/search" . }}
   {{ partial "layouts/bottom_bar" . }}
+  {{ partial "components/mathjax" . }}
 </body>
 
 </html>

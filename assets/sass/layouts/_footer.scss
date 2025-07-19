@@ -5,11 +5,22 @@
 .footer {
   @include s.pb(24);
   @include s.px(4);
+
   display: grid;
   gap: 4rem;
 
+  &__content-info {
+    @include s.pt(4);
+    border-block-start: 1px solid var(--color-border-default);
+    display: flex;
+    flex-direction: column;
+    font-size: v.$text-sm;
+    color: var(--color-text-muted);
+  }
+
   &__copyright {
     @include m.flex-justify(center, center);
+    
     text-align: center;
     flex-direction: column;
 

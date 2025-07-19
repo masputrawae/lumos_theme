@@ -24,6 +24,7 @@
 
   .sidebar--right {
     @include s.pb(24);
+
     grid-area: sidebarRight;
     visibility: visible;
     transform: translateX(0);
@@ -48,6 +49,7 @@
   // default in: 'assets/components/_search.scss'
   .search-bar {
     @include m.width-height(60%, 50%);
+    
     inset-inline-start: 50%;
     inset-block-start: 10%;
     transform: translateX(-50%);

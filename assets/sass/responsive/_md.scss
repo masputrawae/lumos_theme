@@ -95,6 +95,13 @@
   // default in: 'assets/layouts/_footer.scss'
   .footer {
     grid-area: footer;
+
+    &__content-info {
+      @include s.pt(4);
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   // default in: 'assets/layouts/_body.scss'
@@ -107,6 +114,3 @@
     display: none;
   }
 }
-
-// @include b.max(md) {
-// }

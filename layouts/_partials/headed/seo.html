@@ -1,0 +1,31 @@
+{{/* Generate description once */}}
+{{- $description := "" -}}
+{{- if .IsHome -}}
+  {{- $description = site.Params.description | plainify | htmlEscape -}}
+{{- else if .Params.description -}}
+  {{- $description = .Params.description | plainify | htmlEscape -}}
+{{- else -}}
+  {{- $description = .Summary | plainify | truncate 160 | htmlEscape -}}
+{{- end -}}
+
+<!-- SEO Meta -->
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="robots" content="index, follow">
+<meta name="author" content="{{ .Params.author | default site.Params.author }}">
+<meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.keywords }}{{ end }}">
+<link rel="alternate" hreflang="{{ site.Language.Lang }}" href="{{ .Permalink }}">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ .Params.image | default site.Params.image | absURL }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ .Params.image | default site.Params.image | absURL }}">
+<meta name="twitter:site" content="{{ site.Params.twitter }}">
