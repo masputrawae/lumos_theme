@@ -23,7 +23,7 @@ Renders a menu for the given menu ID.
     {{- if $page.IsMenuCurrent .Menu . }}
       {{- $attrs = merge $attrs (dict "class" "menu__link menu__link--isActive" "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "menu__link menu__link--ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "menu__link menu__link--isAncestor" "aria-current" "true") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}

@@ -45,8 +45,8 @@
    TEXT ELLIPSIS
    ===================== */
 @mixin text-ellipsis {
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 

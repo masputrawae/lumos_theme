@@ -1,0 +1,29 @@
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+@use '../abstracts/spacing' as s;
+
+.menu {
+  @include s.p(2);
+  @include s.my(4);
+  @include m.border-default;
+
+  background-color: var(--color-bg-default);
+
+  &__link {
+    @include s.py(1);
+    @include s.px(2);
+
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-title);
+
+    &--isActive {
+      background-color: var(--color-bg-second);
+      border-color: var(--color-border-second);
+    }
+  }
+}
