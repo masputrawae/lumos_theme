@@ -1,0 +1,17 @@
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+@use '../abstracts/spacing' as s;
+
+.footer {
+  @include s.pb(24);
+  
+  &__copyright {
+    @include m.flex-justify(center,center);
+    text-align: center;
+    flex-direction: column;
+
+    a {
+      color: var(--color-link-external-default);
+    }
+  }
+}

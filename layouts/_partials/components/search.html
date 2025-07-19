@@ -1,5 +1,9 @@
 <div id="searchBar" class="search-bar">
-  <div class="search-bar__wrapper">
+  <div 
+    class="search-bar__wrapper" 
+    id="searchForm" 
+    data-search-url="{{ "search.json" | relURL }}"
+  >
     <input
       type="search"
       name="query"
@@ -8,7 +12,6 @@
       placeholder="Search Notes..."
       aria-label="Search through site content"
       autocomplete="off"
-      data-search-url="{{ "search.json" | relURL }}"
     />
     <button class="search-bar__btn-close" data-modal="searchBar" id="searchModalClose">
       {{ partial "components/icon" (dict "name" "x") }}
@@ -16,7 +19,7 @@
   </div>
 
   <div
-    class="search-bar__results-wrapper"
+    class="search-bar__results-wrapper markdown"
     id="resultsPanel"
     aria-live="polite"
     hidden
