@@ -1,5 +1,11 @@
 @use '../abstracts/mixins' as m;
+@use '../abstracts/spacing' as s;
 
+.main {
+  @include s.px(4);
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .overlay {
   @include m.full-screen;
   @include m.transition(opacity, visibility);
