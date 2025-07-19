@@ -1,9 +1,104 @@
 @use '../abstracts/breakpoints' as b;
+@use '../abstracts/spacing' as s;
+@use '../abstracts/mixins' as m;
 
-@include b.min(md){
-  
+@include b.min(md) {
+  // default in: 'assets/layouts/_body.scss'
+  .layout {
+    display: grid;
+    grid-template-areas:
+      'header header header'
+      'sidebarLeft content content'
+      'sidebarLeft footer footer';
+    grid-template-columns: 20rem minmax(0, 1fr);
+    grid-template-rows: repeat(3, auto);
+    position: relative;
+    min-height: 100dvh;
+  }
+
+  // default in: 'assets/layouts/_header.scss'
+  .header {
+    grid-area: header;
+    position: sticky;
+    inset-block-start: 0;
+    height: 5rem;
+    z-index: 1100;
+
+    &__btn--search-open {
+      @include m.flex-justify(start, center);
+      @include s.py(2);
+      @include s.px(4);
+      @include m.border-default;
+      background-color: var(--color-bg-default);
+      width: 30%;
+      gap: 1rem;
+    }
+
+    &__right-col,
+    &__left-col {
+      @include m.flex-justify(center, center);
+      gap: 1rem;
+    }
+
+    &__btn {
+      &--switch-theme[data-theme-toggle] {
+        .bi-sun {
+          display: inline-flex;
+        }
+
+        .bi-moon-stars {
+          display: none;
+        }
+
+        &.isDark {
+          .bi-moon-stars {
+            display: inline-flex;
+          }
+          .bi-sun {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // default in: 'assets/layouts/_sidebar.scss'
+  .sidebar--left {
+    @include s.pb(24);
+    grid-area: sidebarLeft;
+    visibility: visible;
+    transform: translateX(0);
+    inset-block-start: 5rem;
+
+    .sidebar__header {
+      display: none;
+    }
+  }
+
+  .sidebar--right {
+    z-index: 1100;
+  }
+
+  // default in: 'assets/layouts/_body.scss'
+  .main {
+    grid-area: content;
+  }
+
+  // default in: 'assets/layouts/_footer.scss'
+  .footer {
+    grid-area: footer;
+  }
+
+  // default in: 'assets/layouts/_body.scss'
+  .overlay {
+    z-index: 1100;
+  }
+
+  // default in: 'assets/layouts/_bottom-bar.scss'
+  .bottom-bar {
+    display: none;
+  }
 }
 
-@include b.max(md){
-
-}
+// @include b.max(md) {
+// }

@@ -1,9 +1,44 @@
 @use '../abstracts/breakpoints' as b;
+@use '../abstracts/spacing' as s;
+@use '../abstracts/mixins' as m;
 
 @include b.min(lg){
-  
+  // default in: 'assets/layouts/_body.scss'
+  .layout {
+    grid-template-areas:
+      'header header header'
+      'sidebar-left content sidebar-right'
+      'sidebar-left footer sidebar-right';
+    grid-template-columns: 21rem minmax(0, 1fr) 21rem;
+  }
+
+  .header {
+    &__btn--left-side {
+      display: none;
+    }
+  }
+
+  .sidebar {
+    width: 21rem;
+  }
+
+  .sidebar--right {
+    @include s.pb(24);
+    grid-area: sidebar-right;
+    visibility: visible;
+    transform: translateX(0);
+    inset-block-start: 5rem;
+  }
+
+  .main {
+    @include s.px(8);
+  }
+
+  .markdown {
+    max-width: 100ch;
+  }
 }
 
-@include b.max(lg){
+// @include b.max(lg){
 
-}
+// }

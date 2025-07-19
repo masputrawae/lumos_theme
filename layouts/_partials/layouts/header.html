@@ -2,10 +2,12 @@
 
   <nav class="header__left-col">
     {{ partial "components/brand" . }}
-    <button class="header__btn header__btn--search-open" data-modal="searchBar">
-      {{ partial "components/icon" (dict "name" "search") }}
-    </button>
   </nav>
+
+  <button class="header__btn header__btn--search-open" data-modal="searchBar">
+    {{ partial "components/icon" (dict "name" "search") }}
+    <span>Search...</span>
+  </button>
 
   <nav class="header__right-col">
     {{ range site.Params.social }}
@@ -20,9 +22,13 @@
       </a>
     {{ end }}
 
-    <button class="header__btn" data-theme-toggle>
+    <button class="header__btn header__btn--switch-theme" data-theme-toggle>
       {{ partial "components/icon" (dict "name" "sun") }}
       {{ partial "components/icon" (dict "name" "moon-stars") }}
+    </button>
+
+    <button data-sidebar="sidebarRight" class="header__btn header__btn--left-side">
+      {{ partial "components/icon" (dict "name" "book") }}
     </button>
   </nav>
 </header>
