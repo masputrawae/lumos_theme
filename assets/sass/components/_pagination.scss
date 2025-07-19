@@ -1,0 +1,33 @@
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+@use '../abstracts/spacing' as s;
+
+.pagination {
+  display: grid;
+  gap: 1rem;
+
+  &__link {
+    @include s.p(8);
+    @include m.border-default;
+    background-color: var(--color-bg-second);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &--prev {
+      justify-content: start;
+    }
+
+    &--next {
+      justify-content: end;
+    }
+  }
+
+  &__title {
+    font-size: v.$text-xl;
+  }
+
+  .bi {
+    @include m.size(40px);
+  }
+}

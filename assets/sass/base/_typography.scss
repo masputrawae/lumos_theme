@@ -17,6 +17,10 @@ body {
   display: inline-flex;
 }
 
+button {
+  cursor: pointer;
+}
+
 // NON CLASS USING SELECTOR .markdown
 :where(.markdown) {
   max-width: 65ch;
@@ -167,6 +171,8 @@ body {
 }
 
 .link {
+  text-decoration: underline;
+  
   &--external {
     color: var(--color-link-external-default);
 

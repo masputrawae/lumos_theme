@@ -22,12 +22,12 @@
       </a>
     {{ end }}
 
-    <button class="header__btn header__btn--switch-theme" data-theme-toggle>
+    <button class="header__btn header__btn--switch-theme" data-theme-toggle aria-label="Switch Theme">
       {{ partial "components/icon" (dict "name" "sun") }}
       {{ partial "components/icon" (dict "name" "moon-stars") }}
     </button>
 
-    <button data-sidebar="sidebarRight" class="header__btn header__btn--left-side">
+    <button data-sidebar="sidebarRight" class="header__btn header__btn--left-side" aria-label="Sidebar Right Open">
       {{ partial "components/icon" (dict "name" "book") }}
     </button>
   </nav>

@@ -6,7 +6,7 @@
         {{ partial "components/icon" (dict "name" "chevron-double-left") }}
         <span>
           <div>Prev</div>
-          <div>{{ .Title }}</div>
+          <div class="pagination__title">{{ .Title }}</div>
         </span>
       </a>
     {{ end }}
@@ -14,7 +14,7 @@
       <a href="{{ .RelPermalink }}" class="pagination__link pagination__link--next">
         <span>
           <div>Next</div>
-          <div>{{ .Title }}</div>
+          <div class="pagination__title">{{ .Title }}</div>
         </span>
         {{ partial "components/icon" (dict "name" "chevron-double-right") }}
       </a>

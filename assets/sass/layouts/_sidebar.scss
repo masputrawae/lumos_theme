@@ -40,6 +40,11 @@
     inset-inline-end: 0;
     background-color: var(--color-bg-default);
     transform: translateX(100%);
+
+    .terms__link {
+      display: block;
+      @include s.p(1);
+    }
   }
 
   &--isOpen {

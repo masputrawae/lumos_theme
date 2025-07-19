@@ -10,3 +10,19 @@
     href="{{ .href | absURL }}"
   />
 {{ end }}
+
+<link rel="manifest" href="{{ "manifest.json" | absURL }}">
+
+{{/* |===========| START: SW JS |===========| */}}
+<script defer>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker.register('{{ "sw.js" | relURL }}', { scope: '{{ .Site.BaseURL | relURL | strings.TrimSuffix "/" }}/' }).then(reg => {
+              console.log('Service worker registered with scope: ', reg.scope);
+          }).catch(err => {
+              console.log('Service worker registration failed: ', err);
+          });
+      });
+  }
+</script>
+{{/* |===========| END: SW JS |===========| */}}

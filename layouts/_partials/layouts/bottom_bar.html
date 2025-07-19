@@ -1,22 +1,22 @@
 <div class="bottom-bar">
-  <button data-sidebar="sidebarLeft" class="bottom-bar__btn">
+  <button data-sidebar="sidebarLeft" class="bottom-bar__btn" aria-label="Sidebar Left Open">
     {{ partial "components/icon" (dict "name" "list") }}
   </button>
 
-  <button class="bottom-bar__btn" data-theme-toggle>
+  <button class="bottom-bar__btn" data-theme-toggle aria-label="Switch Theme">
     {{ partial "components/icon" (dict "name" "sun") }}
     {{ partial "components/icon" (dict "name" "moon-stars") }}
   </button>
 
-  <a href="{{ site.BaseURL | relURL }}" class="bottom-bar__btn">
+  <a href="{{ site.BaseURL | relURL }}" class="bottom-bar__btn" aria-label="{{ site.Title }}">
     {{ partial "components/icon" (dict "name" "house") }}
   </a>
 
-  <button data-modal="searchBar" class="bottom-bar__btn">
+  <button data-modal="searchBar" class="bottom-bar__btn" aria-label="Open Search Bar">
     {{ partial "components/icon" (dict "name" "search") }}
   </button>
 
-  <button data-sidebar="sidebarRight" class="bottom-bar__btn">
+  <button data-sidebar="sidebarRight" class="bottom-bar__btn" aria-label="Sidebar Right Open">
     {{ partial "components/icon" (dict "name" "book") }}
   </button>
 </div>

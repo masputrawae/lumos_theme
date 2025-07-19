@@ -12,3 +12,5 @@ Apapun yang tertulis di sini adalah sebuah bagian dari perjalanan proses belajar
 Aku berharap jika kalian mampir, paling tidak ada sedikit ilmu yang diperoleh (walaupun tidak dijamin 😂). 
 
 _Selamat menjelajah!_
+
+Hello

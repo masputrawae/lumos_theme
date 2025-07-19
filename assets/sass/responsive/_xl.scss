@@ -7,8 +7,8 @@
   .layout {
     grid-template-areas:
       'header header header'
-      'sidebar-left content sidebar-right'
-      'sidebar-left footer sidebar-right';
+      'sidebarLeft content sidebarRight'
+      'sidebarLeft footer sidebarRight';
     grid-template-columns: 21rem minmax(0, 1fr) 21rem;
   }
 
@@ -24,7 +24,7 @@
 
   .sidebar--right {
     @include s.pb(24);
-    grid-area: sidebar-right;
+    grid-area: sidebarRight;
     visibility: visible;
     transform: translateX(0);
     inset-block-start: 5rem;
@@ -52,8 +52,22 @@
     inset-block-start: 10%;
     transform: translateX(-50%);
   }
-}
 
-@include b.max(xl){
+  // default in: 'assets/layouts/_footer.scss'
+  .footer {
+    @include s.px(8);
+  }
 
+  // default in: 'assets/components/_pagination.scss'
+  .pagination {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    &__link--prev {
+      grid-column: 1;
+    }
+
+    &__link--next {
+      grid-column: 2;
+    }
+  }
 }

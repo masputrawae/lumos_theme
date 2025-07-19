@@ -2,10 +2,20 @@
 @use '../abstracts/spacing' as s;
 @use '../abstracts/mixins' as m;
 
-// @include b.min(lg){
-  
-// }
+@include b.min(lg) {
+  // default in: 'assets/components/_tree_nav.scss'
+  // &
+  // default in: 'assets/components/_table_of_contents.scss'
+  .tree__link:hover,
+  #TableOfContents a:hover {
+    color: var(--color-text-title);
+  }
 
-// @include b.max(lg){
-
-// }
+  .menu__link {
+    @include m.transition(background-color, border-color);
+    &:hover {
+      background-color: var(--color-bg-second);
+      border-color: var(--color-border-second);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{{- define "main" }}
+<h1 class="heading heading--h1">😬 Oops... You're Offline!</h1>
+
+<p>
+  Looks like your internet went on a little adventure 🧭.<br />
+  Try finding the nearest 🌐 WiFi or top up your 📶 quota, then hit
+  <strong>Reload</strong> to get back online.
+</p>
+
+<div>
+  <button
+    onclick="location.reload()"
+    style="
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+    "
+  >
+    🔄 Reload Page
+  </button>
+</div>
+{{- end }}

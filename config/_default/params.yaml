@@ -71,5 +71,3 @@ favicons:
     size  : 512x512
     href  : assets/favicons/android-chrome-512x512.png
 
-  - rel   : manifest
-    href  : assets/favicons/manifest.json  # PWA support (Web App manifest file)
