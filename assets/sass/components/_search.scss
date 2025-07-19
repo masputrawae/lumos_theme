@@ -1,0 +1,50 @@
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+@use '../abstracts/spacing' as s;
+
+.search-bar {
+  @include m.full-screen;
+
+  z-index: 1100;
+  background-color: var(--color-bg-default);
+  display: none;
+
+  &__wrapper {
+    @include m.flex-justify(space-between, center);
+    @include s.px(5);
+    @include s.my(4);
+
+    gap: 1rem;
+  }
+
+  &__input {
+    @include s.px(4);
+    @include s.py(2);
+    @include m.border-default;
+
+    outline: none;
+    background-color: var(--color-bg-second);
+    width: 100%;
+    color: var(--color-text-title);
+
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+  }
+
+  &__btn-close {
+    @include m.border-default;
+    @include s.p(2);
+    @include m.flex-justify(center, center);
+
+    .bi {
+      @include m.size(v.$text-4xl);
+
+      color: var(--color-text-title);
+    }
+  }
+
+  &.is-active {
+    display: block;
+  }
+}

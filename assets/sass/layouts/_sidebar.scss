@@ -35,11 +35,7 @@
     border-inline-start: 1px solid var(--color-border-default);
     inset-inline-end: 0;
     background-color: var(--color-bg-default);
-    // transform: translateX(100%);
-
-    // SEMENTARA
-    visibility: visible;
-    transform: translateX(0%);
+    transform: translateX(100%);
   }
 
   &--isOpen {
