@@ -342,7 +342,7 @@ Here’s the English translation of your text:
 
 ---
 
-### 📂 Nested Callouts  
+### Nested Callouts  
 You can also nest multiple callouts inside each other to organize information more neatly.  
 ```markdown
 > [!question] Can callouts be chained?  

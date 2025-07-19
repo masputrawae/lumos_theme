@@ -52,6 +52,34 @@ You will like those projects!
 
 ---
 
+## Test Link
+
+Sit veniam quis proident [[callout|Inline Link - Using Wikilinks]] aliqua adipisicing pariatur. Velit eiusmod commodo ullamco [Inline Link - Using Markdown Link](callout) dolore sint anim. Ea irure sint duis nostrud tempor excepteur nisi cupidatat. Laboris id excepteur do laborum sunt ullamco minim non sit occaecat elit consectetur consectetur.
+
+**Wikilink Test**
+- [[callout]] no label
+- [[callout|Callout Here]] using label
+- [[callout#nested-callouts]] no label + anchor `#`
+- [[callout#nested-callouts|Go To Heading]] using label & anchor `#`
+- [[broken]] broken no label
+- [[broken|Broken Page]] broken with label
+- [[broken#anchor]] broken no label + anchor `#`
+- [[broken#anchor|Broken Page To Heading]] broken no label + anchor `#`
+- [[https://example.com]] external link
+- [[https://example.com|Go Example]] external link + label
+
+**Markdown Link Test**
+- [](callout) no label
+- [Callout Here](callout) using label
+- [](callout#nested-callouts) no label + anchor `#`
+- [Go To Heading](callout#nested-callouts) using label & anchor `#`
+- [](broken) broken no label
+- [Broken Page](broken) broken with label
+- [](broken#anchor) broken no label + anchor `#`
+- [Broken Page To Heading](broken#anchor) broken no label + anchor `#`
+- [](https://example.com) external link no label
+- [Go Example](https://example.com) external link + label
+
 ## Typographic replacements
 
 Enable typographer option to see result.
