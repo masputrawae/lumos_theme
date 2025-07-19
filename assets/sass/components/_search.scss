@@ -4,6 +4,7 @@
 
 .search-bar {
   @include m.full-screen;
+  border: 2px solid var(--color-border-default);
   z-index: 1100;
   background-color: var(--color-bg-default);
 

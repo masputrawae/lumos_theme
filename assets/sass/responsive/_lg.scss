@@ -30,12 +30,22 @@
     inset-block-start: 5rem;
   }
 
+  // default in: 'assets/layouts/_body.scss'
   .main {
     @include s.px(8);
   }
 
+  // default in: 'assets/base/_typography.scss'
   .markdown {
     max-width: 100ch;
+  }
+
+  // default in: 'assets/components/_search.scss'
+  .search-bar {
+    @include m.width-height(60%, 50%);
+    inset-inline-start: 50%;
+    inset-block-start: 10%;
+    transform: translateX(-50%);
   }
 }
 

@@ -1,6 +1,7 @@
 import Fuse from '../module_external/fuse.js'
 
 export function modalSearchHandler() {
+  const overlay = document.getElementById('overlay')
   const openBtns = document.querySelectorAll('[data-modal="searchBar"]')
   const searchBar = document.getElementById('searchBar')
   const searchInput = searchBar.querySelector('#search-input')
@@ -9,6 +10,7 @@ export function modalSearchHandler() {
   openBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       searchBar.classList.add('is-active')
+      overlay.classList.add('overlay--isActive')
       searchInput.focus()
     })
   })
@@ -16,6 +18,7 @@ export function modalSearchHandler() {
   closeBtn.addEventListener('click', () => {
     searchBar.classList.remove('is-active')
     searchInput.blur()
+    overlay.classList.remove('overlay--isActive')
   })
 
   document.addEventListener('keydown', e => {
@@ -23,6 +26,11 @@ export function modalSearchHandler() {
       searchBar.classList.remove('is-active')
       searchInput.blur()
     }
+  })
+
+  overlay.addEventListener('click', ()=>{
+    searchBar.classList.remove('is-active')
+    searchInput.blur()
   })
 }
 
