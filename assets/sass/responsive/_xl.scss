@@ -1,9 +1,59 @@
 @use '../abstracts/breakpoints' as b;
+@use '../abstracts/spacing' as s;
+@use '../abstracts/mixins' as m;
 
-@include b.min(sm){
-  
+@include b.min(xl){
+  // default in: 'assets/layouts/_body.scss'
+  .layout {
+    grid-template-areas:
+      'header header header'
+      'sidebar-left content sidebar-right'
+      'sidebar-left footer sidebar-right';
+    grid-template-columns: 21rem minmax(0, 1fr) 21rem;
+  }
+
+  .header {
+    &__btn--left-side {
+      display: none;
+    }
+  }
+
+  .sidebar {
+    width: 21rem;
+  }
+
+  .sidebar--right {
+    @include s.pb(24);
+    grid-area: sidebar-right;
+    visibility: visible;
+    transform: translateX(0);
+    inset-block-start: 5rem;
+    z-index: 110;
+
+    [data-sidebar="sidebarRight"]{
+      display: none;
+    }
+  }
+
+  // default in: 'assets/layouts/_body.scss'
+  .main {
+    @include s.px(8);
+  }
+
+  // default in: 'assets/base/_typography.scss'
+  .markdown {
+    max-width: 100ch;
+  }
+
+  // default in: 'assets/components/_search.scss'
+  .search-bar {
+    @include m.width-height(60%, 50%);
+    inset-inline-start: 50%;
+    inset-block-start: 10%;
+    transform: translateX(-50%);
+  }
 }
 
-@include b.max(sm){
+@include b.max(xl){
 
 }

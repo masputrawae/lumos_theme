@@ -1,0 +1,19 @@
+@use '../abstracts/spacing' as s;
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+#linkpreview {
+  @include s.p(4);
+  @include m.border-default;
+  
+  display: none;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 400px;
+  max-height: 400px;
+  overflow: scroll;
+  z-index: 999999;
+  color: var(--color-text-default);
+  background-color: var(--color-bg-default);
+}

@@ -1,6 +1,7 @@
 @use '../abstracts/breakpoints' as b;
 @use '../abstracts/spacing' as s;
 @use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
 
 @include b.min(md) {
   // default in: 'assets/layouts/_body.scss'
@@ -29,6 +30,7 @@
       @include s.py(2);
       @include s.px(4);
       @include m.border-default;
+
       background-color: var(--color-bg-default);
       width: 30%;
       gap: 1rem;
@@ -37,10 +39,15 @@
     &__right-col,
     &__left-col {
       @include m.flex-justify(center, center);
+
       gap: 1rem;
     }
 
     &__btn {
+      .bi {
+        @include m.size(v.$text-4xl);
+      }
+
       &--switch-theme[data-theme-toggle] {
         .bi-sun {
           display: inline-flex;
@@ -65,6 +72,7 @@
   // default in: 'assets/layouts/_sidebar.scss'
   .sidebar--left {
     @include s.pb(24);
+
     grid-area: sidebarLeft;
     visibility: visible;
     transform: translateX(0);
@@ -76,7 +84,7 @@
   }
 
   .sidebar--right {
-    z-index: 1100;
+    z-index: 1200;
   }
 
   // default in: 'assets/layouts/_body.scss'

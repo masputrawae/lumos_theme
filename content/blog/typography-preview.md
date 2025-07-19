@@ -80,6 +80,31 @@ Sit veniam quis proident [[callout|Inline Link - Using Wikilinks]] aliqua adipis
 - [](https://example.com) external link no label
 - [Go Example](https://example.com) external link + label
 
+**Test In Code Block**
+```md
+- [](callout) no label
+- [Callout Here](callout) using label
+- [](callout#nested-callouts) no label + anchor `#`
+- [Go To Heading](callout#nested-callouts) using label & anchor `#`
+- [](broken) broken no label
+- [Broken Page](broken) broken with label
+- [](broken#anchor) broken no label + anchor `#`
+- [Broken Page To Heading](broken#anchor) broken no label + anchor `#`
+- [](https://example.com) external link no label
+- [Go Example](https://example.com) external link + label
+
+- [[callout]] no label
+- [[callout|Callout Here]] using label
+- [[callout#nested-callouts]] no label + anchor `#`
+- [[callout#nested-callouts|Go To Heading]] using label & anchor `#`
+- [[broken]] broken no label
+- [[broken|Broken Page]] broken with label
+- [[broken#anchor]] broken no label + anchor `#`
+- [[broken#anchor|Broken Page To Heading]] broken no label + anchor `#`
+- [[https://example.com]] external link
+- [[https://example.com|Go Example]] external link + label
+```
+
 ## Typographic replacements
 
 Enable typographer option to see result.

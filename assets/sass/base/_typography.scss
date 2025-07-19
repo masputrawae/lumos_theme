@@ -23,6 +23,10 @@ body {
   line-height: 1.6;
   margin-inline: auto;
 
+  :where(b, strong){
+    color: var(--color-text-title);
+  }
+
   p {
     @include s.my(5);
   }

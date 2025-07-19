@@ -5,6 +5,7 @@
   @include s.px(4);
   max-width: 100%;
   overflow-x: hidden;
+  min-height: 100dvh;
 }
 .overlay {
   @include m.full-screen;

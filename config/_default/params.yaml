@@ -10,8 +10,8 @@ twitter     : '@Masputrawae'  # Your Twitter/X username (for metadata)
 # Main branding: choose one — either a logo (image) or an icon (emoji)
 # Only one should be active at a time
 
-logo     : assets/images/logo.png    # Custom logo image (commented out)
-emoji        : '💡'                      # Emoji as the main site icon
+# logo     : assets/images/logo.png    # Custom logo image (commented out)
+emoji        : '🪴'                      # Emoji as the main site icon
 image       : assets/images/default-image.webp  # Default image for social sharing (OG image)
 
 # GitHub repository information (recommended if your theme is open-source)

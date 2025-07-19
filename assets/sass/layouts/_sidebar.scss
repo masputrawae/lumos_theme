@@ -23,6 +23,10 @@
       color: var(--color-text-title);
     }
   }
+
+  &__title {
+    color: var(--color-text-title);
+  }
   
   &--left {
     inset-inline-start: 0;

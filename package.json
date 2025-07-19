@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:floating": "esbuild bundle-floating-ui.js --bundle --minify --format=esm --outfile=assets/js/module_external/floating-ui.bundle.js"
+    "build:floating": "esbuild bundle-floating-ui.js --bundle --minify --format=esm --outfile=assets/js/module_external/floating_ui.js"
   },
   "repository": {
     "type": "git",

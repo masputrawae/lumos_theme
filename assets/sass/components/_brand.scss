@@ -10,6 +10,10 @@
     @include m.size(50px);
   }
 
+  &__emoji {
+    font-size: v.$text-10xl;
+  }
+
   &__title {
     font-size: v.$text-10xl;
     font-family: v.$font-serif;
