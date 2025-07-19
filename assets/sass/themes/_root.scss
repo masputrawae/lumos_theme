@@ -11,6 +11,6 @@
   }
 
   &[data-theme='light'] {
-    @include m.theme-vars(dark.$dark);
+    @include m.theme-vars(light.$light);
   }
 }

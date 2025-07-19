@@ -1,0 +1,15 @@
+@use '../abstracts/mixins' as m;
+
+.overlay {
+  @include m.full-screen;
+  @include m.transition(opacity, visibility);
+  background-color: var(--color-bg-overlay);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 900;
+
+  &--isActive {
+    opacity: 1;
+    visibility: visible;
+  }
+}

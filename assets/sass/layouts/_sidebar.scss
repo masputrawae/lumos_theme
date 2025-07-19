@@ -1,0 +1,30 @@
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+@use '../abstracts/spacing' as s;
+
+.sidebar {
+  @include m.transition(visibility, opacity);
+  position: fixed;
+  inset-block-start: 0;
+  width: 20rem;
+  height: 100dvh;
+  z-index: 1000;
+  visibility: hidden;
+  
+  &--left {
+    inset-inline-start: 0;
+    background-color: var(--color-bg-second);
+    transform: translateX(-100%);
+  }
+  
+  &--right {
+    inset-inline-end: 0;
+    background-color: var(--color-bg-default);
+    transform: translateX(100%);
+  }
+
+  &--isOpen {
+    visibility: visible;
+    transform: translateX(0%);
+  }
+}
