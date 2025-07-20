@@ -5,6 +5,18 @@
       {{ partial "components/icon" (dict "name" "x") }}
     </button>
   </header>
-  {{ .TableOfContents }}
-  {{ partial "components/terms.html" (dict "taxonomy" "tags" "page" .) }}
+
+  {{- if in (slice "home" "page") .Kind }}
+    {{ if .Params.toc | default site.Params.toc | default true }}
+      {{ .TableOfContents }}
+    {{ end }}
+
+    {{ range $taxonomy := site.Params.showTaxonomies }}
+      {{ partial "components/terms.html" (dict 
+        "taxonomy" $taxonomy 
+        "page" $.Page 
+      ) }}
+    {{ end }}
+
+  {{ end }}
 </aside>

@@ -6,7 +6,14 @@
     </button>
   </header>
   <nav class="sidebar__navigation">
-    {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
-    {{ partial "components/tree_nav" . }}
+
+    {{ if site.Params.menuEnable | default true }}
+      {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
+    {{ end }}
+
+    {{ if site.Params.treeNavEnable | default true }}
+      {{ partial "components/tree_nav" . }}
+    {{ end }}
+    
   </nav>
 </aside>

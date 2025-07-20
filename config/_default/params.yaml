@@ -1,27 +1,17 @@
-# Copyright (optional, but it's good practice to keep it for attribution)
-copyright: Theme by Putra Jaya
-
-# Basic site metadata (required for proper SEO and social sharing)
-author      : 'Putra Jaya'  # Site author name
-description : |             # A short description of your site (used in meta tags)
+author      : 'Putra Jaya'
+description : |
   In nostrud ut sunt cupidatat amet. Nostrud laboris occaecat qui sit adipisicing Lorem exercitation culpa sunt ut exercitation mollit. Deserunt sunt eu eiusmod amet dolore tempor do tempor culpa esse.
-twitter     : '@Masputrawae'  # Your Twitter/X username (for metadata)
+twitter     : '@Masputrawae'
+emoji       : '🪴'
+image       : assets/images/default-image.webp
 
-# Main branding: choose one — either a logo (image) or an icon (emoji)
-# Only one should be active at a time
+# menuEnable: false
+# treeNavEnable: false
 
-# logo     : assets/images/logo.png    # Custom logo image (commented out)
-emoji        : '🪴'                      # Emoji as the main site icon
-image       : assets/images/default-image.webp  # Default image for social sharing (OG image)
+showTaxonomies:
+  - tags
+  - categories
 
-# GitHub repository information (recommended if your theme is open-source)
-github:
-  url     : https://github.com/masputrawae      # Your GitHub profile URL
-  repo    : /READMEnya-ada-nanti/               # Repository path for the theme
-  branch  : main                                # Default branch of the repository
-
-# Social media links (you can add or remove platforms)
-# Icons are based on Bootstrap Icons — use the icon name
 social:
   - name  : Facebook
     url   : https://facebook.com
@@ -39,8 +29,6 @@ social:
     url   : https://github.com/masputrawae/
     icon  : github
 
-# Favicon setup (optional but recommended for branding and mobile support)
-# You can use one or multiple sizes for full browser/device compatibility
 favicons:
   - rel   : icon
     type  : image/x-icon
@@ -71,3 +59,5 @@ favicons:
     size  : 512x512
     href  : assets/favicons/android-chrome-512x512.png
 
+# Copyright (optional, but it's good practice to keep it for attribution)
+copyright: Theme by Putra Jaya

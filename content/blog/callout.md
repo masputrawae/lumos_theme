@@ -6,6 +6,8 @@ image: https://picsum.photos/1080/720?2
 tags:
   - typography
   - markdown
+categories:
+  - Blog
 created: 2025-07-12T22:05:12+07:00
 updated: 2025-07-12T22:05:12+07:00
 pinned: true

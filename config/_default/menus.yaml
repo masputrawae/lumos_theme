@@ -1,26 +1,30 @@
 main:
-  - name: Home
-    pageRef: /
-    weight: 10
-    params: 
-      icon: house
-  - name: Tags
-    pageRef: /tags
-    weight: 20
-    params: 
-      icon: tags
-  - name: Blog
-    pageRef: /blog
-    weight: 30
-    params:
-      icon: paragraph
-  - name: Apaun
-    pageRef: /Apaun
-    weight: 40
-    params:
-      icon: rocket-takeoff
-  - name: Entahlah
-    pageRef: /Entahlah
-    weight: 50
-    params:
-      icon: bookmark
+  - name      : Home
+    pageRef   : /
+    weight    : 10
+    params    : 
+      icon    : house
+
+  - name      : Tags
+    pageRef   : /tags
+    weight    : 20
+    params    : 
+      icon    : tags
+
+  - name      : Blog
+    pageRef   : /blog
+    weight    : 30
+    params    :
+      icon    : paragraph
+
+  - name      : Apaun
+    pageRef   : /Apaun
+    weight    : 40
+    params    :
+      icon    : rocket-takeoff
+      
+  - name      : Entahlah
+    pageRef   : /Entahlah
+    weight    : 50
+    params    :
+      icon    : bookmark

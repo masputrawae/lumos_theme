@@ -4,36 +4,6 @@ title: 'My Garden'
 enableEmoji: true
 enableGitInfo: true
 
-frontmatter:
-  date:
-    - date
-    - publishdate
-    - pubdate
-    - published
-    - lastmod
-    - modified
-    - created
-
-  expiryDate:
-    - expirydate
-    - unpublishdate
-
-  lastmod:
-    - :git
-    - lastmod
-    - modified
-    - date
-    - publishdate
-    - pubdate
-    - published
-    - updated
-
-  publishDate:
-    - publishdate
-    - pubdate
-    - published
-    - date
-
 services:
   googleAnalytics:
     id: 'G-W9TMTZZYG5'
@@ -78,8 +48,3 @@ outputs:
 sitemap:
   filename: 'sitemap.xml'
   priority: 1.0
-
-caches:
-  assets:
-    dir: ':resourceDir/_gen'
-    maxAge: -1

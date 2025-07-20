@@ -17,7 +17,9 @@ For a given taxonomy, renders a list of terms assigned to the page.
     <ul class="terms__list">
       {{- range . }}
         <li class="terms__item">
-          <a href="{{ .RelPermalink }}" class="terms__link">#{{ .Name }}</a>
+          <a href="{{ .RelPermalink }}" class="terms__link">
+            {{ if in $taxonomy "tags" }}#{{ end }}{{ .Name }}
+          </a>
         </li>
       {{- end }}
     </ul>
