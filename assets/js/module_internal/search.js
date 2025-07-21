@@ -9,27 +9,28 @@ export function modalSearchHandler() {
 
   openBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      searchBar.classList.add('is-active')
+      searchBar.classList.add('search-bar--is-active')
       overlay.classList.add('overlay--isActive')
       searchInput.focus()
     })
   })
 
   closeBtn.addEventListener('click', () => {
-    searchBar.classList.remove('is-active')
+    searchBar.classList.remove('search-bar--is-active')
     searchInput.blur()
     overlay.classList.remove('overlay--isActive')
   })
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
-      searchBar.classList.remove('is-active')
+      searchBar.classList.remove('search-bar--is-active')
       searchInput.blur()
     }
   })
 
   overlay.addEventListener('click', ()=>{
-    searchBar.classList.remove('is-active')
+    searchBar.classList.remove('search-bar--is-active')
+    overlay.classList.remove('overlay--isActive')
     searchInput.blur()
   })
 }

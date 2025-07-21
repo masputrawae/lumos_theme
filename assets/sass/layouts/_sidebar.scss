@@ -25,11 +25,8 @@
     background-color: var(--color-bg-second);
     inset-inline-start: 0;
     transform: translateX(-100%);
-
-    visibility: visible;
-    transform: translateX(0%);
   }
-  
+
   &--right {
     background-color: var(--color-bg-default);
     inset-inline-end: 0;
@@ -61,15 +58,18 @@
     color: var(--color-text-title);
     font-weight: 600;
     width: 100%;
+    text-shadow: var(--color-text-shadow-default);
 
     &--isActive {
-      box-shadow: var(--color-shadow-default);  
+      box-shadow: var(--color-shadow-default);
       border: 1px solid var(--color-border-default);
       border-radius: 0.5rem;
       background-color: var(--color-bg-second);
+      text-shadow: var(--color-text-shadow-hover);
     }
 
     &:hover {
+      text-shadow: var(--color-text-shadow-hover);
       color: var(--color-text-muted);
     }
   }
@@ -79,5 +79,107 @@
 // TREE NAV
 // ===================
 .tree {
-  
+  &__toggle {
+    @include m.flex-justify(space-between, center);
+    width: 100%;
+    font-weight: 600;
+    color: var(--color-text-title);
+    padding-block: 0.5rem;
+    font-size: v.$text-lg;
+    text-shadow: var(--color-text-shadow-default);
+
+    .bi {
+      @include m.transition(rotate);
+    }
+
+    &--isOpen {
+      .bi {
+        rotate: 90deg;
+      }
+    }
+  }
+
+  &__list {
+    border-left: 1px solid var(--color-border-default);
+    padding-inline-start: 1.25rem;
+    margin-inline-start: 0.25rem;
+    display: none;
+
+    &--isOpen {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-block: 0.5rem;
+    min-width: 100%;
+    color: var(--color-text-muted);
+    text-shadow: var(--color-text-shadow-default);
+
+    &:hover,
+    &:focus {
+      color: var(--color-text-title);
+      text-shadow: var(--color-text-shadow-hover);
+    }
+    &--isActive {
+      color: var(--color-accent-default);
+      text-decoration: underline;
+      font-weight: 600;
+      text-shadow: var(--color-text-shadow-hover);
+
+      &:hover,
+      &:focus {
+        color: var(--color-accent-hover);
+      }
+    }
+  }
+}
+
+// ===================
+// TOC & HIGHLIGHT
+// ===================
+#TableOfContents {
+  ul ul {
+    padding-inline-start: 1.25rem;
+    margin-inline-start: 0.25rem;
+    border-inline-start: 1px solid var(--color-border-default);
+  }
+
+  a {
+    @include m.transition(color);
+    display: inline-block;
+    padding-block: 0.5rem;
+    min-width: 100%;
+    color: var(--color-text-muted);
+
+    &:hover,
+    &:focus {
+      color: var(--color-text-title);
+    }
+
+    &.isActive {
+      color: var(--color-accent-default);
+
+      &:hover,
+      &:focus {
+        color: var(--color-accent-hover);
+      }
+    }
+  }
+}
+
+// ===================
+// TAXONOMY TERM
+// ===================
+.terms {
+  &__label {
+    display: block;
+    margin-block-end: 0.5rem;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+  }
 }

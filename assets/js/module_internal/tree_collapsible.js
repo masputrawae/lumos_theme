@@ -11,11 +11,11 @@ export function treeHandler() {
 
       // Apply saved state
       if (treeState[targetId]) {
-        targetEl.classList.add('tree__children--isOpen')
-        button.classList.add('tree__btn--isOpen')
+        targetEl.classList.add('tree__list--isOpen')
+        button.classList.add('tree__toggle--isOpen')
       } else {
-        targetEl.classList.remove('tree__children--isOpen')
-        button.classList.remove('tree__btn--isOpen')
+        targetEl.classList.remove('tree__list--isOpen')
+        button.classList.remove('tree__toggle--isOpen')
       }
     })
   }
@@ -28,10 +28,10 @@ export function treeHandler() {
       button.addEventListener('click', () => {
         const treeState = JSON.parse(sessionStorage.getItem(TREE_KEY)) || {}
 
-        targetEl.classList.toggle('tree__children--isOpen')
-        button.classList.toggle('tree__btn--isOpen')
+        targetEl.classList.toggle('tree__list--isOpen')
+        button.classList.toggle('tree__toggle--isOpen')
 
-        const isOpen = targetEl.classList.contains('tree__children--isOpen')
+        const isOpen = targetEl.classList.contains('tree__list--isOpen')
         treeState[targetId] = isOpen
 
         sessionStorage.setItem(TREE_KEY, JSON.stringify(treeState))

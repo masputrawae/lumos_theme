@@ -5,3 +5,17 @@
 .layout {
   display: block;
 }
+
+.overlay {
+  @include m.full-screen;
+  @include m.transition(opacity, visibility);
+  z-index: 500;
+  background-color: var(--color-bg-overlay);
+  visibility: hidden;
+  opacity: 0;
+
+  &--isActive {
+    visibility: visible;
+    opacity: 1;
+  }
+}

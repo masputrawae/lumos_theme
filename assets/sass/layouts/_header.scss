@@ -85,3 +85,50 @@
   height: 4rem;
   z-index: 300;
 }
+
+// ===================
+// SEARCH
+// ===================
+.search-bar {
+  @include m.full-screen;
+  background-color: var(--color-bg-second);
+  z-index: 500;
+  overflow-y: auto;
+  display: none;
+
+  &__wrapper {
+    @include m.flex-justify(center, center);
+    gap: 1rem;
+    width: 100%;
+    margin-block-start: 1rem;
+    padding-inline: 1.5rem;
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 0.25rem;
+    box-shadow: var(--color-shadow-default);
+    border: 1px solid var(--color-border-default);
+    outline: none;
+    color: var(--color-text-title);
+    padding: 0.5rem 1rem;
+
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+  }
+
+  &--is-active {
+    display: block;
+  }
+}
+
+.results {
+  margin-block-start: 1.5rem;
+  padding-inline-start: 1.5rem;
+  list-style-type: disc;
+
+  &__item {
+    padding-block: 0.25rem;
+  }
+}
