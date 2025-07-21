@@ -6,7 +6,7 @@
     </button>
   </header>
   {{ .TableOfContents }}
-  {{ range $taxonomy := site.Params.showTaxonomies }}
+  {{ range $taxonomy := site.Params.displayTaxonomies }}
     {{ partial "components/terms.html" (dict "taxonomy" $taxonomy "page" $.Page ) }}
   {{ end }}
 </aside>

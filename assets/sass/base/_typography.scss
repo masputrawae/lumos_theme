@@ -1,325 +1,194 @@
+@use '../abstracts/breakpoints' as b;
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
-@use '../abstracts/spacing' as s;
 
-html {
-  @include m.custom-scrollbar;
-  font-size: v.$text-base;
-}
-
-body {
-  background-color: var(--color-bg-default);
-  color: var(--color-text-default);
-  font-family: v.$font-sans;
-}
-
-.bi {
+// HEADING
+:where(h1, h2, h3, h4, h5, h6, .h) {
   display: inline-flex;
-}
+  width: 100%;
+  gap: 1rem;
+  color: var(--color-text-title);
+  line-height: 1.75;
+  margin-block-start: 1.5rem;
+  margin-block-end: 1rem;
+  border-block-end: 1px solid var(--color-border-default);
+  text-shadow: var(--color-text-shadow-default);
 
-button {
-  cursor: pointer;
-}
-
-/* =====================
-   NON CLASS USING SELECTOR .markdown
-   ===================== */
-:where(.markdown) {
-  max-width: 65ch;
-  line-height: 1.6;
-  margin-inline: auto;
-
-  b, strong {
-    color: var(--color-text-title);
+  &:hover {
+    text-shadow: var(--color-text-shadow-hover);
   }
+}
+
+.h {
+  .h__anchor {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &:hover {
+    .h__anchor {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+:is(h1, .h1) {
+  font-size: v.$text-5xl;
+  .bi {
+    @include m.size(v.$text-5xl);
+  }
+}
+:is(h2, .h2) {
+  font-size: v.$text-4xl;
+  .bi {
+    @include m.size(v.$text-4xl);
+  }
+}
+:is(h3, .h3) {
+  font-size: v.$text-3xl;
+  .bi {
+    @include m.size(v.$text-3xl);
+  }
+}
+:is(h4, .h4) {
+  font-size: v.$text-2xl;
+  .bi {
+    @include m.size(v.$text-2xl);
+  }
+}
+:is(h5, .h5) {
+  font-size: v.$text-xl;
+  .bi {
+    @include m.size(v.$text-xl);
+  }
+}
+:is(h6, .h6) {
+  font-size: v.$text-lg;
+  .bi {
+    @include m.size(v.$text-lg);
+  }
+}
+
+// MARKDOWN ARTICLE IN MAIN
+main {
+  line-height: 1.6;
+  padding-inline: 1rem;
+  max-width: 100%;
+  overflow-x: hidden;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 
   p {
-    @include s.my(5);
+    margin-block: 1.5rem;
   }
 
-  a {
+  :where(a, .link) {
     color: var(--color-link-default);
+    text-decoration: underline;
 
+    .bi {
+      @include m.size(0.7rem);
+    }
     &:hover {
       color: var(--color-link-hover);
     }
   }
 
-  /* =====================
-   LIST STYLE
-   ===================== */
+  .link {
+    &--broken {
+      color: var(--color-link-broken-default);
+
+      &:hover {
+        color: var(--color-link-broken-hover);
+      }
+    }
+
+    &--external {
+      color: var(--color-link-external-default);
+
+      &:hover {
+        color: var(--color-link-external-hover);
+      }
+    }
+  }
+
   ul,
   ol {
-    @include s.my(5);
-    @include s.pl(6);
+    padding-inline-start: 1.5rem;
+    margin: 1rem 0;
   }
 
   ul {
     list-style-type: disc;
   }
+
   ol {
     list-style-type: decimal;
   }
+
+  ul li,
+  ol li {
+    margin: 0.5em 0;
+  }
+
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    margin: 0.3rem 0;
+    padding-inline-start: 1.5rem;
+  }
 }
 
-/* =====================
-   HR
-   ===================== */
-hr {
-  @include s.my(6);
-  display: block;
-  border: none;
-  width: 100%;
-  height: 3px;
-  background-color: var(--color-border-default);
+// DEL
+del {
+  color: var(--color-text-muted);
 }
 
-/* =====================
-   TABLE
-   ===================== */
+// TABLE
+.table-container {
+  @include m.custom-scrollbar;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: 0.25rem;
+  box-shadow: var(--color-shadow-default);
+}
+
 table {
-  @include s.my(12);
-  font-size: v.$text-sm;
-  table-layout: auto;
   width: 100%;
-  line-height: 1.75;
   border-collapse: collapse;
-  border-spacing: 0;
-  background-color: var(--color-surface-default);
-  color: var(--color-text-default);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  min-width: 65ch;
+  background-color: var(--color-bg-default);
 }
 
 thead {
-  background-color: var(--color-surface-subtle);
-  border-bottom: 2px solid var(--color-border-strong);
-
-  th {
-    color: var(--color-text-title);
-    vertical-align: bottom;
-    padding: 0.75rem 1rem;
-    font-weight: 600;
-    text-align: left;
-    text-transform: uppercase;
-    font-size: 0.875rem;
-    letter-spacing: 0.05em;
-  }
+  background-color: var(--color-bg-second);
 }
 
-tbody {
-  tr {
-    border-bottom: 1px solid var(--color-border-default);
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: var(--color-surface-hover);
-    }
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  td {
-    padding: 0.75rem 1rem;
-    vertical-align: top;
-    color: var(--color-text-default);
-    font-size: 0.875rem;
-  }
-}
-
-tfoot {
-  border-top: 2px solid var(--color-border-second);
-  background-color: var(--color-text-title);
-
-  td {
-    padding: 0.75rem 1rem;
-    vertical-align: top;
-    font-weight: 500;
-    color: var(--color-text-title);
-  }
-}
-
-/* =====================
-   BLOCKQUOTE
-   ===================== */
-blockquote {
-  @include s.my(6);
-  @include s.pl(4);
-
-  color: var(--color-text-muted);
-  border-inline-start-width: 0.25rem;
-  border-inline-start-color: var(--color-accent-default);
-  quotes: '“' '”' '‘' '’';
-  font-style: italic;
+th {
+  text-align: left;
+  padding: 1rem 1.5rem;
   font-weight: 600;
-
-  p:first-of-type::before {
-    content: open-quote;
-  }
-
-  p:last-of-type::after {
-    content: close-quote;
-  }
-
-  p:first-of-type::before,
-  p:last-of-type::after {
-    font-size: v.$text-2xl;
-    color: var(--color-text-title);
-  }
-}
-
-/* =====================
-   DEFINITION LIST
-   ===================== */
-dl {
-  @include s.my(5);
-}
-
-dt {
-  @include s.pb(1);
-  font-weight: 600;
-  color: var(--color-text-title);
-  border-bottom: 1px dashed var(--color-text-muted);
-}
-
-dd {
-  @include s.m(2);
-  @include s.pl(4);
   color: var(--color-text-muted);
-  border-inline-start: 3px solid var(--color-accent-default);
+  border-bottom: 2px solid var(--color-border-default);
+  white-space: nowrap;
 }
 
-/* =====================
-   Link
-   ===================== */
-.link {
-  text-decoration: underline;
-
-  &--external {
-    color: var(--color-link-external-default);
-
-    &:hover {
-      color: var(--color-link-external-hover);
-    }
-  }
-
-  &--broken {
-    color: var(--color-link-broken-default);
-    cursor: not-allowed;
-
-    &:hover {
-      color: var(--color-link-broken-hover);
-    }
-  }
+td {
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid var(--color-border-default);
+  color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
-/* =====================
-   HEADING
-   ===================== */
-.heading {
-  @include s.mt(8);
-  @include s.mb(5);
-
-  color: var(--color-text-title);
-  border-bottom: 1px solid var(--color-border-default);
-  width: 100%;
-  scroll-margin-block-start: 6rem;
-
-  &__anchor {
-    @include m.transition(visibility, opacity);
-    opacity: 0;
-    visibility: hidden;
-
-    .bi {
-      @include m.size(v.$text-6xl);
-    }
-  }
-
-  &:hover {
-    .heading__anchor {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  &--h1 {
-    font-size: v.$text-6xl;
-  }
-  &--h2 {
-    font-size: v.$text-5xl;
-  }
-  &--h3 {
-    font-size: v.$text-4xl;
-  }
-  &--h4 {
-    font-size: v.$text-3xl;
-  }
-  &--h5 {
-    font-size: v.$text-2xl;
-  }
-  &--h6 {
-    font-size: v.$text-xl;
-  }
+tbody tr:hover {
+  background-color: var(--color-bg-second);
+  transition: background-color 0.2s ease-in-out;
 }
 
-/* =====================
-   CODE
-   ===================== */
-pre,
-code,
-kbd {
-  font-family: v.$font-mono;
-}
-
-code:not(pre code) {
-  font-size: v.$text-sm;
-}
-/* =====================
-   HIGHLIGHT
-   ===================== */
-.highlight {
-  position: relative;
-
-  &::before,
-  & code::before {
-    font-family: var(--font-mono);
-    font-size: v.$text-sm;
-
-    border: 1px solid var(--color-border-default);
-    border-bottom: none;
-    margin-bottom: -1px;
-    color: var(--color-text-muted);
-    background-color: var(--color-bg-second);
-    padding: 0.1rem 0.75rem;
-    border-radius: 0.25rem 0.25rem 0rem 0rem;
-    position: absolute;
-    bottom: 100%;
-  }
-
-  &::before {
-    content: attr(file);
-    right: 0;
-  }
-
-  pre {
-    padding: 1rem;
-    margin-block: 3rem;
-    background-color: var(--color-bg-second);
-    border: 1px solid var(--color-border-default);
-    box-shadow: var(--color-shadow-default);
-    overflow-x: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-accent) var(--color-bg-default);
-  }
-
-  code {
-    &::before {
-      content: 'Lang: ' attr(data-lang);
-      text-transform: capitalize;
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-    }
-  }
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg-second);
 }

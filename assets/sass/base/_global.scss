@@ -1,0 +1,17 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
+html {
+  @include m.custom-scrollbar;
+  background-color: var(--color-bg-default);
+  color: var(--color-text-default);
+  font-size: v.$text-base;
+  font-family: v.$font-sans;
+}
+
+.bi {
+  @include m.size(1.25rem);
+  display: inline;
+  color: inherit;
+}

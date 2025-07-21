@@ -27,4 +27,4 @@ main:
     pageRef   : /about
     weight    : 50
     params    :
-      icon    : bookmark
+      icon    : person-circle

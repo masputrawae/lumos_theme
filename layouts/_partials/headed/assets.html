@@ -121,7 +121,7 @@ MATH
 SERVICE WORKER
 ===================
 */}}
-<script>
+{{/*  <script>
   if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
           navigator.serviceWorker.register('{{ "sw.js" | relURL }}', { scope: '{{ .Site.BaseURL | relURL | strings.TrimSuffix "/" }}/' }).then(reg => {
@@ -131,5 +131,5 @@ SERVICE WORKER
           });
       });
   }
-</script>
+</script>  */}}
 

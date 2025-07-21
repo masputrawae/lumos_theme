@@ -41,6 +41,7 @@ type-h6
 chevron-double-left
 chevron-double-right
 sun
+person-circle
 
 alexa
 behance

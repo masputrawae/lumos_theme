@@ -1,28 +1,30 @@
 $dark: (
   color-bg-default: #09090b,
   color-bg-second: #18181b,
-  color-bg-overlay: rgba(0, 0, 0, 0.8),
+  color-bg-overlay: rgba(9, 9, 11, 0.9),
   
   color-text-title: #fafafa,
   color-text-default: #e4e4e7,
-  color-text-muted: #a1a1aa,
-  
+  color-text-muted: #b0b0b9,
+
   color-border-default: #27272a,
-  color-border-second: #3f3f46,
-  
+  color-border-second: #36363a,
+
   color-accent-default: #22c55e,
-  color-accent-hover: #16a34a,
-  
+  color-accent-hover: #15803d,
+
   color-link-default: #22c55e,
-  color-link-hover: #16a34a,
-  
+  color-link-hover: #15803d,
+
   color-link-external-default: #3b82f6,
-  color-link-external-hover: #2563eb,
-  
+  color-link-external-hover: #1d4ed8,
+
   color-link-broken-default: #ef4444,
-  color-link-broken-hover: #dc2626,
-  
-  color-shadow-sm: rgba(0, 0, 0, 0.5),
-  color-shadow-md: rgba(0, 0, 0, 0.6),
-  color-shadow-lg: rgba(0, 0, 0, 0.7),
+  color-link-broken-hover: #b91c1c,
+
+  color-shadow-default: '0 1px 2px rgba(0, 0, 0, 0.4)',
+  color-shadow-hover: '0 4px 6px rgba(0, 0, 0, 0.5)',
+
+  color-text-shadow-default: '0 1px 1px rgba(0, 0, 0, 0.3)',
+  color-text-shadow-hover: '0 2px 2px rgba(0, 0, 0, 0.35)',
 );
