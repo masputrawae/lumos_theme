@@ -15,6 +15,7 @@
   margin-block-end: 1rem;
   border-block-end: 1px solid var(--color-border-default);
   text-shadow: var(--color-text-shadow-default);
+  scroll-margin-block-start: 6rem;
 
   &:hover {
     text-shadow: var(--color-text-shadow-hover);

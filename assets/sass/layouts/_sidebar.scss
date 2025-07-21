@@ -1,0 +1,83 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
+// ===================
+// SIDEBAR
+// ===================
+.sidebar {
+  @include m.width-height(100%, 100dvh);
+  @include m.transition(translate, visibility);
+  @include m.custom-scrollbar;
+  position: fixed;
+  inset-block-start: 0;
+  visibility: hidden;
+  z-index: 200;
+  padding: 1rem;
+  padding-block-end: 5rem;
+  overflow-y: auto;
+
+  &__header {
+    @include m.flex-justify(space-between, center);
+  }
+
+  &--left {
+    background-color: var(--color-bg-second);
+    inset-inline-start: 0;
+    transform: translateX(-100%);
+
+    visibility: visible;
+    transform: translateX(0%);
+  }
+  
+  &--right {
+    background-color: var(--color-bg-default);
+    inset-inline-end: 0;
+    transform: translateX(100%);
+  }
+
+  &--isOpen {
+    visibility: visible;
+    transform: translateX(0%);
+  }
+}
+
+// ===================
+// MENU MAIN
+// ===================
+.menu {
+  padding: 0.5rem;
+  margin-block: 1rem;
+  background-color: var(--color-bg-default);
+  border: 2px solid var(--color-border-default);
+  border-radius: 0.5rem;
+  box-shadow: var(--color-shadow-default);
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--color-text-title);
+    font-weight: 600;
+    width: 100%;
+
+    &--isActive {
+      box-shadow: var(--color-shadow-default);  
+      border: 1px solid var(--color-border-default);
+      border-radius: 0.5rem;
+      background-color: var(--color-bg-second);
+    }
+
+    &:hover {
+      color: var(--color-text-muted);
+    }
+  }
+}
+
+// ===================
+// TREE NAV
+// ===================
+.tree {
+  
+}

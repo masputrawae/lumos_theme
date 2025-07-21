@@ -1,18 +1,11 @@
-export function offcanvasHandler(){
-  const buttons = document.querySelectorAll('[data-sidebar]');
-  const overlay = document.getElementById('overlay');
+export function offcanvasHandler() {
+  const buttons = document.querySelectorAll('[data-sidebar]')
   buttons.forEach(btn => {
-    const targetId = btn.getAttribute('data-sidebar');
-    const targetEL = document.getElementById(targetId);
+    const targetId = btn.getAttribute('data-sidebar')
+    const targetEL = document.getElementById(targetId)
 
-    btn.addEventListener('click', ()=>{
-      targetEL.classList.toggle('sidebar--isOpen');
-      overlay.classList.toggle('overlay--isActive');
-    })
-    
-    overlay.addEventListener('click', ()=>{
-      targetEL.classList.remove('sidebar--isOpen');
-      overlay.classList.remove('overlay--isActive');
+    btn.addEventListener('click', () => {
+      targetEL.classList.toggle('sidebar--isOpen')
     })
   })
 }

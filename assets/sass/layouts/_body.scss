@@ -1,0 +1,7 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
+.layout {
+  display: block;
+}

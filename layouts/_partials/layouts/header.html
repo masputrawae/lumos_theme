@@ -4,10 +4,15 @@
     {{ partial "components/brand" . }}
   </nav>
 
-  <button class="header__btn header__btn--search-open" data-modal="searchBar">
-    {{ partial "components/icon" (dict "name" "search") }}
-    <span>Search...</span>
-  </button>
+  <div class="header__center-col">
+    <button 
+      class="header__btn header__btn--search-open" 
+      data-modal="searchBar"
+    >
+      {{ partial "components/icon" (dict "name" "search") }}
+      <span>Search...</span>
+    </button>
+  </div>
 
   <nav class="header__right-col">
     {{ range site.Params.social }}
