@@ -42,6 +42,7 @@ chevron-double-left
 chevron-double-right
 sun
 person-circle
+tools
 
 alexa
 behance
