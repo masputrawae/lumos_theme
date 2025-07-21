@@ -13,17 +13,16 @@
   {{ if gt (len $parts) 1 }}
     {{ $anchor = printf "#%s" (index $parts 1) }}
   {{ end }}
-
   {{ $page := or (.Page.Site.GetPage $pagePath) (.Page.Site.GetPage (printf "/%s" $pagePath)) }}
 
-
+  {{/* --- Wikilink: Page exists case --- */}}
   {{ if $page }}
     <a class="link link--internal" href="{{ $page.RelPermalink }}{{ $anchor }}">
       {{ .Text | safeHTML }}
       {{ partial "components/icon" (dict "name" "folder-symlink") }}
     </a>
   {{ else }}
-    {{/* Alias detection for wikilink */}}
+    {{/* --- Wikilink: Alias detection --- */}}
     {{ $aliasPage := "" }}
     {{ range .Page.Site.Pages }}
       {{ if in .Aliases $target }}
@@ -31,13 +30,16 @@
         {{ break }}
       {{ end }}
     {{ end }}
+    
+    {{/* --- Wikilink: Alias exists case --- */}}
     {{ if $aliasPage }}
       <a class="link link--internal" href="{{ $aliasPage.RelPermalink }}{{ $anchor }}">
         {{ .Text | safeHTML }}
         {{ partial "components/icon" (dict "name" "folder-symlink") }}
       </a>
     {{ else }}
-      <span class="link link--broken" title="Page not found (yet)">
+      {{/* --- Wikilink: Broken link case --- */}}
+      <span class="link link--broken" title="{{ i18n "missingLink" }}">
         {{ .Text | safeHTML }} 
         {{ partial "components/icon" (dict "name" "x-circle") }}
       </span>
@@ -45,7 +47,7 @@
   {{ end }}
 
 {{ else if not $isExternal }}
-  {{/* --- Internal markdown links + alias support --- */}}
+  {{/* --- Internal markdown links --- */}}
   {{ $dest := .Destination }}
   {{ $parts := split $dest "#" }}
   {{ $pagePath := index $parts 0 }}
@@ -55,14 +57,14 @@
   {{ end }}
   {{ $page := or (.Page.GetPage $pagePath) (.Page.Site.GetPage (printf "/%s" $pagePath)) }}
 
-
+  {{/* --- Internal link: Page exists case --- */}}
   {{ if $page }}
     <a class="link link--internal" href="{{ $page.RelPermalink }}{{ $anchor }}">
       {{ .Text | safeHTML }}
       {{ partial "components/icon" (dict "name" "folder-symlink") }}
     </a>
   {{ else }}
-    {{/* Alias detection for markdown link */}}
+    {{/* --- Internal link: Alias detection --- */}}
     {{ $aliasPage := "" }}
     {{ range .Page.Site.Pages }}
       {{ if in .Aliases $dest }}
@@ -70,13 +72,16 @@
         {{ break }}
       {{ end }}
     {{ end }}
+    
+    {{/* --- Internal link: Alias exists case --- */}}
     {{ if $aliasPage }}
       <a class="link link--internal" href="{{ $aliasPage.RelPermalink }}{{ $anchor }}">
         {{ .Text | safeHTML }}
         {{ partial "components/icon" (dict "name" "folder-symlink") }}
       </a>
     {{ else }}
-      <span class="link link--broken" title="Page not found (yet)">
+      {{/* --- Internal link: Broken link case --- */}}
+      <span class="link link--broken" title="{{ i18n "missingLink" }}">
         {{ .Text | safeHTML }}
         {{ partial "components/icon" (dict "name" "x-circle") }}
       </span>

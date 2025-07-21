@@ -29,7 +29,7 @@ button {
   line-height: 1.6;
   margin-inline: auto;
 
-  :where(b, strong) {
+  b, strong {
     color: var(--color-text-title);
   }
 
@@ -60,130 +60,134 @@ button {
   ol {
     list-style-type: decimal;
   }
+}
 
-  /* =====================
-   DEFINITION LIST
-   ===================== */
-  dl {
-    @include s.my(5);
-  }
-
-  dt {
-    @include s.pb(1);
-    font-weight: 600;
-    color: var(--color-text-title);
-    border-bottom: 1px dashed var(--color-text-muted);
-  }
-
-  dd {
-    @include s.m(2);
-    @include s.pl(4);
-    color: var(--color-text-muted);
-    border-inline-start: 3px solid var(--color-accent-default);
-  }
-
-  /* =====================
+/* =====================
    HR
    ===================== */
-  hr {
-    @include s.my(6);
-    display: block;
-    border: none;
-    width: 100%;
-    height: 3px;
-    background-color: var(--color-border-default);
-  }
+hr {
+  @include s.my(6);
+  display: block;
+  border: none;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-border-default);
+}
 
-  /* =====================
+/* =====================
    TABLE
    ===================== */
-  table {
-    @include s.my(12);
-    font-size: v.$text-sm;
-    table-layout: auto;
-    width: 100%;
-    line-height: 1.75;
-  }
+table {
+  @include s.my(12);
+  font-size: v.$text-sm;
+  table-layout: auto;
+  width: 100%;
+  line-height: 1.75;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: var(--color-surface-default);
+  color: var(--color-text-default);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
 
-  thead {
+thead {
+  background-color: var(--color-surface-subtle);
+  border-bottom: 2px solid var(--color-border-strong);
+
+  th {
+    color: var(--color-text-title);
+    vertical-align: bottom;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+tbody {
+  tr {
     border-bottom: 1px solid var(--color-border-default);
+    transition: background-color 0.2s;
 
-    th {
-      color: var(--color-text-title);
-      vertical-align: bottom;
-      padding-inline: 0.75rem;
-      padding-bottom: 0.75rem;
-      font-weight: 700;
+    &:hover {
+      background-color: var(--color-surface-hover);
+    }
+
+    &:last-child {
+      border-bottom: none;
     }
   }
 
-  tbody {
-    tr {
-      border-bottom: 1px solid var(--color-border-default);
-
-      &:last-child {
-        border-bottom: 0;
-      }
-    }
-
-    td {
-      vertical-align: baseline;
-    }
+  td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    color: var(--color-text-default);
+    font-size: 0.875rem;
   }
+}
 
-  tfoot {
-    border-top: 1px solid var(--color-border-default);
+tfoot {
+  border-top: 2px solid var(--color-border-second);
+  background-color: var(--color-text-title);
 
-    td {
-      vertical-align: top;
-    }
+  td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    font-weight: 500;
+    color: var(--color-text-title);
   }
+}
 
-  /* =====================
-   CODE
-   ===================== */
-  pre,
-  code,
-  kbd {
-    font-family: v.$font-mono;
-  }
-
-  code:not(pre code) {
-    @include m.border-default;
-    @include s.py(1);
-    @include s.px(2);
-    font-size: v.$text-sm;
-    background-color: var(--color-bg-second);
-  }
-
-  /* =====================
+/* =====================
    BLOCKQUOTE
    ===================== */
-  blockquote {
-    @include s.my(6);
-    @include s.pl(4);
+blockquote {
+  @include s.my(6);
+  @include s.pl(4);
 
-    color: var(--color-text-muted);
-    border-inline-start-width: 0.25rem;
-    border-inline-start-color: var(--color-accent-default);
-    quotes: '“' '”' '‘' '’';
-    font-style: italic;
-    font-weight: 600;
+  color: var(--color-text-muted);
+  border-inline-start-width: 0.25rem;
+  border-inline-start-color: var(--color-accent-default);
+  quotes: '“' '”' '‘' '’';
+  font-style: italic;
+  font-weight: 600;
 
-    p:first-of-type::before {
-      content: open-quote;
-    }
-
-    p:last-of-type::after {
-      content: close-quote;
-    }
-
-    p:first-of-type::before,
-    p:last-of-type::after {
-      font-size: v.$text-2xl;
-      color: var(--color-text-title);
-    }
+  p:first-of-type::before {
+    content: open-quote;
   }
+
+  p:last-of-type::after {
+    content: close-quote;
+  }
+
+  p:first-of-type::before,
+  p:last-of-type::after {
+    font-size: v.$text-2xl;
+    color: var(--color-text-title);
+  }
+}
+
+/* =====================
+   DEFINITION LIST
+   ===================== */
+dl {
+  @include s.my(5);
+}
+
+dt {
+  @include s.pb(1);
+  font-weight: 600;
+  color: var(--color-text-title);
+  border-bottom: 1px dashed var(--color-text-muted);
+}
+
+dd {
+  @include s.m(2);
+  @include s.pl(4);
+  color: var(--color-text-muted);
+  border-inline-start: 3px solid var(--color-accent-default);
 }
 
 /* =====================
@@ -259,6 +263,18 @@ button {
   }
 }
 
+/* =====================
+   CODE
+   ===================== */
+pre,
+code,
+kbd {
+  font-family: v.$font-mono;
+}
+
+code:not(pre code) {
+  font-size: v.$text-sm;
+}
 /* =====================
    HIGHLIGHT
    ===================== */

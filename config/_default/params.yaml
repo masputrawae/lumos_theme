@@ -5,9 +5,6 @@ twitter     : '@Masputrawae'
 emoji       : '🪴'
 image       : assets/images/default-image.webp
 
-# menuEnable: false
-# treeNavEnable: false
-
 showTaxonomies:
   - tags
   - categories
