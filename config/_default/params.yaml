@@ -1,14 +1,42 @@
-author      : 'Putra Jaya'
-description : |
-  In nostrud ut sunt cupidatat amet. Nostrud laboris occaecat qui sit adipisicing Lorem exercitation culpa sunt ut exercitation mollit. Deserunt sunt eu eiusmod amet dolore tempor do tempor culpa esse.
-twitter     : '@Masputrawae'
-emoji       : '🪴'
-image       : assets/images/default-image.webp
+# ===================
+# 
+# ===================
+author    : Someone
+logo      : assets/images/logo.png
+emoji     : '🍀'
+image     : assets/images/default-image.webp
+twitter   : '@someone'
 
-showTaxonomies:
+# ===================
+# 
+# ===================
+ghrepo    : https://github.com/someone/repo
+branch    : main
+
+# ===================
+# 
+# ===================
+editPage  : true
+toc       : true
+math      : true
+
+# ===================
+# 
+# ===================
+displayTaxonomies: 
   - tags
   - categories
 
+# ===================
+# 
+# ===================
+giscus      : true
+giscusConfig:
+  repo      : 'someone/repo'
+
+# ===================
+# 
+# ===================
 social:
   - name  : Facebook
     url   : https://facebook.com
@@ -26,6 +54,9 @@ social:
     url   : https://github.com/masputrawae/
     icon  : github
 
+# ===================
+# 
+# ===================
 favicons:
   - rel   : icon
     type  : image/x-icon
@@ -56,5 +87,7 @@ favicons:
     size  : 512x512
     href  : assets/favicons/android-chrome-512x512.png
 
+# ===================
 # Copyright (optional, but it's good practice to keep it for attribution)
+# ===================
 copyright: Theme by Putra Jaya

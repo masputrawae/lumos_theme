@@ -5,15 +5,8 @@
       {{ partial "components/icon" (dict "name" "x") }}
     </button>
   </header>
-  <nav class="sidebar__navigation">
-
-    {{ if site.Params.menuEnable | default true }}
-      {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
-    {{ end }}
-
-    {{ if site.Params.treeNavEnable | default true }}
-      {{ partial "components/tree_nav" . }}
-    {{ end }}
-    
+  <nav class="sidebar__nav">
+    {{ partial "components/menu.html" (dict "menuID" "main" "page" .) }}
+    {{ partial "components/tree_nav" . }}
   </nav>
 </aside>

@@ -11,20 +11,20 @@ main:
     params    : 
       icon    : tags
 
-  - name      : Blog
-    pageRef   : /blog
+  - name      : Tutorial
+    pageRef   : /tutorial
     weight    : 30
     params    :
       icon    : paragraph
 
-  - name      : Apaun
-    pageRef   : /Apaun
+  - name      : Code Snippet
+    pageRef   : /snippet
     weight    : 40
     params    :
       icon    : rocket-takeoff
       
-  - name      : Entahlah
-    pageRef   : /Entahlah
+  - name      : About Me
+    pageRef   : /about
     weight    : 50
     params    :
       icon    : bookmark

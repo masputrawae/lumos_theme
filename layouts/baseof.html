@@ -7,8 +7,6 @@
 
 <head>
   {{ partial "headed/meta" . }}
-  {{ partial "headed/fonts" . }}
-  {{ partial "headed/seo" . }}
   {{ partial "headed/assets" . }}
 </head>
 
@@ -27,9 +25,9 @@
 
   <div id="linkpreview"></div>
   <div id="overlay" class="overlay"></div>
+  
   {{ partial "components/search" . }}
   {{ partial "layouts/bottom_bar" . }}
-  {{ partial "components/mathjax" . }}
 </body>
 
 </html>

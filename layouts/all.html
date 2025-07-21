@@ -1,9 +1,9 @@
 {{- define "main" }}
   {{- if in (slice "home" "page") .Kind  }}
-    <h1 class="main__title heading heading--h1">{{ .Title }}</h1>
+    <h1 class="main__title h h--h1">{{ .Title }}</h1>
     {{ partial "layouts/content" . }}
   {{- else if in (slice "section" "taxonomy" "term") .Kind }}
-    <h1 class="main__title heading heading--h1">{{ .Title }}</h1>
+    <h1 class="main__title h h--h1">{{ .Title }}</h1>
     {{ partial "layouts/content" . }}
 
     <ul>
