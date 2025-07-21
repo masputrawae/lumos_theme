@@ -2,7 +2,9 @@
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
 
+// ===================
 // HEADING
+// ===================
 :where(h1, h2, h3, h4, h5, h6, .h) {
   display: inline-flex;
   width: 100%;
@@ -70,7 +72,9 @@
   }
 }
 
+// ===================
 // MARKDOWN ARTICLE IN MAIN
+// ===================
 main {
   line-height: 1.6;
   padding-inline: 1rem;
@@ -142,12 +146,57 @@ main {
   }
 }
 
+// ===================
+// HR
+// ===================
+hr {
+  margin-block: 3rem;
+  display: block;
+  border: none;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-border-default);
+}
+
+// ===================
+// DEFINITION LIST
+// ===================
+dl {
+  margin-block: 1.75rem;
+}
+
+dt {
+  padding-block-end: 0.25rem;
+  font-weight: 600;
+  color: var(--color-text-title);
+  border-block-end: 1px dashed var(--color-text-muted);
+}
+
+dd {
+  margin: 0.5rem;
+  padding-inline-start: 1rem;
+  color: var(--color-text-muted);
+  border-inline-start: 3px solid var(--color-accent-default);
+}
+
+// ===================
+// STRONG & BOLD
+// ===================
+:where(b, strong) {
+  color: var(--color-text-title);
+}
+
+
+// ===================
 // DEL
+// ===================
 del {
   color: var(--color-text-muted);
 }
 
+// ===================
 // TABLE
+// ===================
 .table-container {
   @include m.custom-scrollbar;
   overflow-x: auto;
@@ -191,4 +240,112 @@ tbody tr:hover {
 
 tbody tr:nth-child(even) {
   background-color: var(--color-bg-second);
+}
+
+// ===================
+// BLOCKQUOTE
+// ===================
+blockquote {
+  margin-block: 1.5rem;
+  padding-inline-start: 1rem;
+  color: var(--color-text-muted);
+  border-inline-start-width: 0.25rem;
+  border-inline-start-color: var(--color-accent-default);
+  quotes: '“' '”' '‘' '’';
+  font-style: italic;
+  font-weight: 600;
+
+  p:first-of-type::before {
+    content: open-quote;
+  }
+
+  p:last-of-type::after {
+    content: close-quote;
+  }
+
+  p:first-of-type::before,
+  p:last-of-type::after {
+    font-size: v.$text-2xl;
+    color: var(--color-text-title);
+  }
+}
+
+// ===================
+// CALLOUT
+// ===================
+.callout {
+  border: 1px solid var(--callout-border);
+  background-color: var(--callout-bg);
+  display: block;
+  margin: 1rem;
+  box-shadow: var(--color-shadow-default);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-block-end: 1px solid var(--callout-border);
+    margin-block-end: -1px;
+    color: var(--callout-color);
+    cursor: pointer;
+  }
+
+  &__title {
+    color: var(--callout-color);
+  }
+
+  &__body {
+    padding: 1rem;
+  }
+}
+
+// ===================
+// FIGURE IMAGE
+// ===================
+.figure {
+  margin: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  &__image {
+    border: 1px solid var(--color-border-default);
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    box-shadow: var(--color-shadow-default);
+  }
+
+  &--left,
+  &--right {
+    max-width: 320px;
+  }
+
+  &--left {
+    float: left;
+    align-items: start;
+    text-align: left;
+  }
+
+  &--right {
+    float: right;
+    align-items: end;
+    text-align: right;
+  }
+
+  &__caption {
+    margin-block-start: 1rem;
+    font-size: v.$text-3xs;
+    color: var(--color-text-muted);
+    max-width: 320px;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
 }

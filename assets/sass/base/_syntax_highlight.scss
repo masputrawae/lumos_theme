@@ -1,4 +1,62 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
 // SYNTAX HIGLIGHT
+pre,
+code,
+kbd {
+  font-family: v.$font-mono;
+}
+
+code:not(pre code) {
+  font-size: v.$text-sm;
+}
+
+.highlight {
+  position: relative;
+
+  &::before,
+  & code::before {
+    font-family: var(--font-mono);
+    font-size: v.$text-sm;
+
+    border: 1px solid var(--color-border-default);
+    border-block-end: none;
+    margin-block-end: -1px;
+    color: var(--color-text-muted);
+    background-color: var(--color-bg-second);
+    padding: 0.1rem 0.75rem;
+    border-radius: 0.25rem 0.25rem 0rem 0rem;
+    position: absolute;
+    bottom: 100%;
+  }
+
+  &::before {
+    content: attr(file);
+    right: 0;
+  }
+
+  pre {
+    @include m.custom-scrollbar;
+    padding: 1rem;
+    margin-block: 3rem;
+    background-color: var(--color-bg-second);
+    border: 1px solid var(--color-border-default);
+    box-shadow: var(--color-shadow-default);
+    overflow-x: scroll;
+  }
+
+  code {
+    &::before {
+      content: 'Lang: ' attr(data-lang);
+      text-transform: capitalize;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+    }
+  }
+}
+
 .bg {
   color: var(--fg);
   background-color: var(--bg);
