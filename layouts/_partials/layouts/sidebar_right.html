@@ -9,4 +9,5 @@
   {{ range $taxonomy := site.Params.displayTaxonomies }}
     {{ partial "components/terms.html" (dict "taxonomy" $taxonomy "page" $.Page ) }}
   {{ end }}
+  {{ partial "components/git_history" . }}
 </aside>

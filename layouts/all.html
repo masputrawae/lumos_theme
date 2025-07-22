@@ -2,6 +2,12 @@
   {{- if in (slice "home" "page") .Kind  }}
     <h1 class="main__title h h--h1">{{ .Title }}</h1>
     {{ partial "layouts/content" . }}
+    
+    <nav>
+      <a href="{{ site.Params.ghrepo }}/edit/main/content/{{ .Page.File.Path }}" target="_blank" rel="noopener noreferrer">
+        ✏️ Edit Page
+      </a>
+    </nav>
   {{- else if in (slice "section" "taxonomy" "term") .Kind }}
     <h1 class="main__title h h--h1">{{ .Title }}</h1>
     {{ partial "layouts/content" . }}
