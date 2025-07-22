@@ -1,4 +1,3 @@
-@use '../abstracts/breakpoints' as b;
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
 
@@ -14,4 +13,8 @@ html {
   @include m.size(1.25rem);
   display: inline;
   color: inherit;
+}
+
+button {
+  cursor: pointer;
 }

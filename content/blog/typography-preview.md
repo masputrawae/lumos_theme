@@ -222,7 +222,7 @@ Laborum nulla amet in duis est ipsum deserunt et anim laboris incididunt dolor n
 
 Consectetur elit deserunt laborum aliqua cupidatat cupidatat tempor ad commodo Lorem in nostrud. Mollit aute incididunt dolor aliqua cillum consectetur officia. Occaecat duis proident consectetur incididunt anim aliquip. Irure ut mollit exercitation pariatur consectetur irure exercitation Lorem ad consectetur et.
 
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg 'right|The Stormtroopocat')
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg 'center|The Stormtroopocat')
 
 Occaecat esse ad ullamco consequat eiusmod ex eiusmod in nulla. Laboris nulla fugiat est culpa consequat. Duis adipisicing aliqua deserunt proident exercitation laborum aute. Qui nisi magna sunt mollit excepteur sint.
 
@@ -233,6 +233,8 @@ Like links, Images also have a footnote style syntax
 With a reference later in the document defining the URL location:
 
 [id]: https://octodex.github.com/images/dojocat.jpg 'The Dojocat'
+
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg 'right|The Stormtroopocat')
 
 ## Plugins
 

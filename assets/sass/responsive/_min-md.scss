@@ -1,0 +1,78 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
+@include b.min(md) {
+  .layout {
+    display: grid;
+    grid-template-areas:
+      'header header header'
+      'sidebarLeft content content'
+      'sidebarLeft footer footer';
+    grid-template-columns: 20rem minmax(0, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .header {
+    grid-area: header;
+    @include m.flex-justify(space-between, center);
+
+    &__center-col {
+      display: flex;
+    }
+
+    &__right-col {
+      @include m.flex-justify(center, center);
+      gap: 1rem;
+    }
+
+    &__btn {
+      &--search-open {
+        background-color: var(--color-bg-default);
+        width: 200px;
+        padding: 0.25rem 1.5rem;
+        border: 1px solid var(--color-border-default);
+        box-shadow: var(--color-shadow-default);
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      &:hover {
+        color: var(--color-accent-default);
+      }
+    }
+  }
+
+  .sidebar {
+    width: 20rem;
+    padding-block-end: 10rem;
+    inset-block-start: 4rem;
+
+    &--left {
+      transition: none;
+      grid-area: sidebarLeft;
+      transform: translateX(0%);
+      visibility: visible;
+
+      .sidebar__header {
+        display: none;
+      }
+    }
+  }
+
+  .main {
+    grid-area: content;
+    padding-inline: 1.5rem;
+  }
+
+  .footer {
+    grid-area: footer;
+    padding-inline: 1.5rem;
+  }
+
+  .bottom-bar {
+    display: none;
+  }
+}

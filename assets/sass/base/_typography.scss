@@ -1,4 +1,3 @@
-@use '../abstracts/breakpoints' as b;
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
 
@@ -38,37 +37,37 @@
 
 :is(h1, .h1) {
   font-size: v.$text-5xl;
-  .bi {
+  .h__anchor .bi {
     @include m.size(v.$text-5xl);
   }
 }
 :is(h2, .h2) {
   font-size: v.$text-4xl;
-  .bi {
+  .h__anchor .bi {
     @include m.size(v.$text-4xl);
   }
 }
 :is(h3, .h3) {
   font-size: v.$text-3xl;
-  .bi {
+  .h__anchor .bi {
     @include m.size(v.$text-3xl);
   }
 }
 :is(h4, .h4) {
   font-size: v.$text-2xl;
-  .bi {
+  .h__anchor .bi {
     @include m.size(v.$text-2xl);
   }
 }
 :is(h5, .h5) {
   font-size: v.$text-xl;
-  .bi {
+  .h__anchor .bi {
     @include m.size(v.$text-xl);
   }
 }
 :is(h6, .h6) {
   font-size: v.$text-lg;
-  .bi {
+  .h__anchor .bi {
     @include m.size(v.$text-lg);
   }
 }

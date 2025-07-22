@@ -1,0 +1,65 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
+@include b.min(xl) {
+  .layout {
+    display: grid;
+    grid-template-areas:
+      'header header header'
+      'sidebarLeft content sidebarRight'
+      'sidebarLeft footer sidebarRight';
+    grid-template-columns: 20rem minmax(0, 1fr) 20rem;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .header {
+    height: 5rem;
+    padding-inline: 2rem;
+    [data-sidebar='sidebarRight'] {
+      display: none;
+    }
+
+    &__btn--search-open {
+      padding-block: 0.5rem;
+      width: 500px;
+    }
+  }
+
+  .search-bar {
+    width: 70%;
+    height: 70%;
+    inset-block-start: 10%;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    border: 2px solid var(--color-border-default);
+    border-radius: 0.5rem;
+    box-shadow: var(--color-shadow-default);
+  }
+
+  .sidebar {
+    inset-block-start: 5rem;
+    &--right {
+      transition: none;
+      grid-area: sidebarRight;
+      visibility: visible;
+      transform: translateX(0%);
+
+      [data-sidebar="sidebarRight"]{
+        display: none;
+      }
+    }
+  }
+
+  .main,
+  .footer {
+    padding-inline: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  .pager {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
