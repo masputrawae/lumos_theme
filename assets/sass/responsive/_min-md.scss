@@ -9,7 +9,7 @@
       'header header header'
       'sidebarLeft content content'
       'sidebarLeft footer footer';
-    grid-template-columns: 20rem minmax(0, 1fr);
+    grid-template-columns: 21rem minmax(0, 1fr);
     grid-template-rows: repeat(3, auto);
   }
 
@@ -46,8 +46,8 @@
   }
 
   .sidebar {
-    width: 20rem;
-    padding-block-end: 10rem;
+    width: 21rem;
+    padding-block-end: 8rem;
     inset-block-start: 4rem;
 
     &--left {

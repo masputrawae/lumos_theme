@@ -45,7 +45,7 @@
       visibility: visible;
       transform: translateX(0%);
 
-      [data-sidebar="sidebarRight"]{
+      [data-sidebar='sidebarRight'] {
         display: none;
       }
     }
@@ -60,6 +60,13 @@
   }
 
   .pager {
-    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    &__link--prev {
+      grid-column: 1;
+    }
+    &__link--next {
+      grid-column: 2;
+    }
   }
 }

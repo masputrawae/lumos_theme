@@ -1,6 +1,6 @@
 export function tocHandler() {
   const header = document.querySelector('.header')
-  const OFFSET = header?.offsetHeight + 40 || 80
+  const OFFSET = header?.offsetHeight + 50 || 80
 
   const tocLinks = document.querySelectorAll('#TableOfContents a')
   const headings = Array.from(tocLinks)

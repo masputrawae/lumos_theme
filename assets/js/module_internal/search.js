@@ -24,11 +24,12 @@ export function modalSearchHandler() {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       searchBar.classList.remove('search-bar--is-active')
+      overlay.classList.remove('overlay--isActive')
       searchInput.blur()
     }
   })
 
-  overlay.addEventListener('click', ()=>{
+  overlay.addEventListener('click', () => {
     searchBar.classList.remove('search-bar--is-active')
     overlay.classList.remove('overlay--isActive')
     searchInput.blur()

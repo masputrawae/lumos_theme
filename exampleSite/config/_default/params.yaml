@@ -18,7 +18,7 @@ branch      : main
 # ===================
 editPage  : true
 toc       : true
-math      : true
+math      : false
 
 # ===================
 # 

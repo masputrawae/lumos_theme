@@ -1,6 +1,6 @@
 <div class="pager">
   {{ $pages := .CurrentSection.Pages.ByTitle }}
-  {{ with $pages.Prev . }}
+  {{ with $pages.Next . }}
     <a href="{{ .RelPermalink }}" class="pager__link pager__link--prev">
       <span class="pager__label">
         {{ partial "components/icon" (dict "name" "chevron-double-left") }}
@@ -9,7 +9,7 @@
       <span class="pager__title">{{ .Title }}</span>
     </a>
   {{ end }}
-  {{ with $pages.Next . }}
+  {{ with $pages.Prev . }}
     <a href="{{ .RelPermalink }}" class="pager__link pager__link--next">
       <span class="pager__label">
         Next
