@@ -178,9 +178,23 @@
     margin-block-end: 0.5rem;
   }
 
+  &__list {
+    @include m.flex-justify(start, center);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
   &__link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999rem;
     padding: 0.25rem 0.5rem;
+    background-color: var(--color-bg-accent-default);
+    color: white;
+    font-weight: 600;
+    text-shadow: var(--color-text-shadow-default);
+    box-shadow: var(--color-shadow-default);
   }
 }
 
@@ -190,7 +204,7 @@
 .git-history {
   margin: 2rem 0;
   padding: 1rem 0;
-  border-radius: 8px;
+  border-radius: 0.25rem;
   box-shadow: var(--color-shadow-default);
 
   &__label {
@@ -226,14 +240,13 @@
 
     &::before {
       content: '';
+      @include m.size(10px);
       position: absolute;
       left: 6px;
-      top: 5px;
-      width: 10px;
-      height: 10px;
+      top: 40%;
       border-radius: 50%;
       background-color: var(--color-accent-default);
-      border: 2px solid var(--color-text-title);
+      border: 2px solid var(--color-border-default);
       z-index: 3;
     }
 

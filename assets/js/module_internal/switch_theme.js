@@ -1,3 +1,21 @@
+function updateGiscusThemeFromStorage() {
+  const iframe = document.querySelector('iframe.giscus-frame')
+  if (!iframe) return
+
+  const storageTheme = sessionStorage.getItem('theme') || 'light'
+
+  iframe.contentWindow.postMessage(
+    {
+      giscus: {
+        setConfig: {
+          theme: storageTheme === 'dark' ? 'dark' : 'light',
+        },
+      },
+    },
+    'https://giscus.app'
+  )
+}
+
 export function themeHandler() {
   const KEY_THEME = 'theme'
   const elHtml = document.documentElement
@@ -7,31 +25,7 @@ export function themeHandler() {
     elHtml.dataset.theme = theme
     buttons.forEach(btn => btn.classList.toggle('isDark', theme === 'dark'))
     sessionStorage.setItem(KEY_THEME, theme)
-    updateGiscusTheme(theme)
-  }
-
-  const updateGiscusTheme = theme => {
-    const apply = () => {
-      const iframe = document.querySelector('iframe.giscus-frame')
-      if (!iframe) return false
-
-      iframe.contentWindow.postMessage(
-        {
-          giscus: {
-            setConfig: {
-              theme: theme === 'dark' ? 'dark' : 'light',
-            },
-          },
-        },
-        'https://giscus.app'
-      )
-
-      return true
-    }
-    if (apply()) return
-    const interval = setInterval(() => {
-      if (apply()) clearInterval(interval)
-    }, 1000)
+    updateGiscusThemeFromStorage()
   }
 
   const initTheme = () => {
@@ -46,7 +40,8 @@ export function themeHandler() {
       .matches
       ? 'dark'
       : 'light'
-    storageTheme ? switchTheme(storageTheme) : switchTheme(themeSystem)
+
+    switchTheme(storageTheme || themeSystem)
   }
 
   buttons.forEach(btn => {
@@ -58,4 +53,7 @@ export function themeHandler() {
   })
 
   initTheme()
+  window.addEventListener('load', () => {
+    setTimeout(updateGiscusThemeFromStorage, 500)
+  })
 }
