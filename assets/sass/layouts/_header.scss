@@ -1,5 +1,5 @@
-@use '../abstracts/mixins' as m;
-@use '../abstracts/variables' as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
 
 // ===================
 // BRAND
@@ -12,7 +12,9 @@
   &__logo {
     @include m.size(40px);
   }
-
+  &__emoji {
+    font-size: v.$text-8xl;
+  }
   &__title {
     font-family: v.$font-serif;
     font-size: v.$text-8xl;
