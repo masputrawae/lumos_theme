@@ -1,26 +1,4 @@
 <footer class="footer">
-  <nav class="pager">
-    {{ $pages := .CurrentSection.Pages.ByTitle }}
-    {{ with $pages.Prev . }}
-      <a href="{{ .RelPermalink }}" class="pager__link pager__link--prev">
-        {{ partial "components/icon" (dict "name" "chevron-double-left") }}
-        <span class="pager__label">
-          <span>Prev</span>
-          <span class="pager__title">{{ .Title }}</span>
-        </span>
-      </a>
-    {{ end }}
-    {{ with $pages.Next . }}
-      <a href="{{ .RelPermalink }}" class="pager__link pager__link--next">
-        <span class="pager__label">
-          <span>Next</span>
-          <span class="pager__title">{{ .Title }}</span>
-        </span>
-        {{ partial "components/icon" (dict "name" "chevron-double-right") }}
-      </a>
-    {{ end }}
-  </nav>
-
   <div class="footer__credits">
     <p class="footer__credits-text">
       <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Built with Hugo</a>

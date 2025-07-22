@@ -17,9 +17,6 @@ pinned: true
 
 Tempor occaecat sit proident in est ad. Cupidatat amet elit laborum commodo nulla dolore dolore officia consectetur. Ex labore exercitation dolor est do consequat. Sunt dolor fugiat laborum elit aute anim nisi in nisi ex ad.
 
-> [!info] This is an example info callout  
-> This callout provides additional information.  
-
 Callouts are used to provide annotations or highlight important information in notes without disrupting the main text flow. This feature is inspired by [Obsidian](https://obsidian.md/) and can be used for various purposes such as info, warnings, tips, and code examples.  
 
 > [!info] This is an example info callout  

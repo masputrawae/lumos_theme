@@ -3,5 +3,28 @@
 @use '../abstracts/variables' as v;
 
 .footer {
-  padding-block-end: 6rem;
+  text-align: center;
+  font-size: 14px;
+  padding: 6rem 1rem;
+}
+
+.footer__credits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__credits-text {
+  margin: 0;
+}
+
+.footer__credits-text a {
+  color: var(--color-accent-default);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.footer__credits-text a:hover {
+  color: var(--color-accent-hover);
 }

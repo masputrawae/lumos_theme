@@ -1,3 +1,73 @@
+@use '../abstracts/breakpoints' as b;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
 .main {
   padding-top: 4rem;
+}
+
+.content-nav {
+  border-top: 1px solid var(--color-border-default);
+
+  &__edit-page {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-bg-second);
+    color: var(--color-text-title);
+    font-weight: 600;
+    text-decoration: none;
+    gap: 0.5rem;
+    border: 1px solid var(--color-border-default);
+    border-radius: 0.5rem;
+    margin-block: 1rem;
+
+    .bi {
+      @include m.size(v.$text-xl);
+    }
+  }
+}
+
+.pager {
+  display: grid;
+  gap: 1rem;
+  border-block: 1px solid var(--color-border-default);
+  padding-block: 1rem;
+  margin-block: 1.5rem;
+
+  &__link {
+    text-decoration: none;
+    border: 1px solid var(--color-border-default);
+    background-color: var(--color-bg-second);
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    &--prev {
+      text-align: start;
+
+      .pager__label {
+        justify-content: start;
+      }
+    }
+
+    &--next {
+      text-align: end;
+
+      .pager__label {
+        justify-content: end;
+      }
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: v.$text-xl;
+    color: var(--color-text-title);
+
+    .bi {
+      @include m.size(v.$text-xl);
+    }
+  }
 }

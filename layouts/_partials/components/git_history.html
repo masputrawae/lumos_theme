@@ -1,6 +1,6 @@
 {{ with .GitInfo }}
-  <ul class="git-timeline">
-    {{ range .Ancestors.Reverse | first 5 }}
+  <ul class="git-history">
+    {{ range .Ancestors.Reverse }}
       <li>
         <span class="date">{{ .CommitDate.Format "2006-01-02" }}</span>
         <span class="message">
