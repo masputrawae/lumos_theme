@@ -6,7 +6,7 @@ import {
 
 export function linkPreviewHandler() {
   const tooltip = document.querySelector('#linkpreview')
-  const elements = document.querySelectorAll('.main a')
+  const elements = document.querySelectorAll('.markdown a')
 
   let currentHref = ''
   let showPreviewTimer

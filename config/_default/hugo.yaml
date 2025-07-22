@@ -1,18 +1,62 @@
+# ===================
+# 
+# ===================
 baseURL        : 'https://masputrawae.github.io/lumos_theme/'
 languageCode   : 'id'
 title          : 'My Garden'
 enableEmoji    : true
 enableGitInfo  : true
 
+# ===================
+# 
+# ===================
 services:
   googleAnalytics:
     id: 'G-W9TMTZZYG5'
 
+# ===================
+# 
+# ===================
 privacy:
   googleAnalytics:
     disable              : false
     respectDoNotTrack    : false
 
+# ===================
+# 
+# ===================
+frontmatter:
+  date:
+    - created
+    - date
+    - publishdate
+    - pubdate
+    - published
+    - lastmod
+    - modified
+
+  expiryDate:
+    - expirydate
+    - unpublishdate
+  
+  lastmod:
+    - :git
+    - lastmod
+    - modified
+    - date
+    - publishdate
+    - pubdate
+    - published
+  
+  publishDate:
+    - publishdate
+    - pubdate
+    - published
+    - date
+
+# ===================
+# 
+# ===================
 mediaType                : 'application/json'
 outputFormats:
   search:
@@ -41,6 +85,9 @@ outputFormats:
     isPlainText          : true
     notAlternative       : true
 
+# ===================
+# 
+# ===================
 outputs:
   home:
     - html
@@ -52,6 +99,9 @@ outputs:
     - news
     - offline
 
+# ===================
+# 
+# ===================
 sitemap:
   filename  : 'sitemap.xml'
   priority  : 1.0
