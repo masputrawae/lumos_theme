@@ -32,7 +32,16 @@ displayTaxonomies:
 # ===================
 giscus      : true
 giscusConfig:
-  repo      : 'someone/repo'
+  dataRepo              : 'masputrawae/masputrawae.github.io'
+  dataRepoId            : 'R_kgDOPAdouw'
+  dataCategory          : 'General'
+  dataCategoryId        : 'DIC_kwDOPAdou84CtQ2d'
+  dataMapping           : 'title'
+  dataStrict            : 0
+  dataReactionsEnabled  : 1
+  dataEmitMetadata      : 1
+  dataInputPosition     : 'top'
+  dataLang              : 'id'
 
 # ===================
 # 

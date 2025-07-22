@@ -1,4 +1,10 @@
 <footer class="footer">
+  {{ if site.Params.giscus }}
+    <div class="footer__discussion">
+      {{ partial "components/giscus" . }}
+    </div>
+  {{ end }}
+
   <div class="footer__credits">
     <p class="footer__credits-text">
       <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Built with Hugo</a>
@@ -6,5 +12,4 @@
     </p>
     <p class="footer__credits-text">&copy; {{ site.Title }} · {{ now.Year }}. All rights reserved.</p>
   </div>
-
 </footer>

@@ -1,0 +1,19 @@
+{{ $gis := site.Params.giscusConfig }}
+
+<script
+  src="https://giscus.app/client.js"
+  data-repo="{{ $gis.dataRepo }}"
+  data-repo-id="{{ $gis.dataRepoId }}"
+  data-category="{{ $gis.dataCategory }}"
+  data-category-id="{{ $gis.dataCategoryId }}"
+  data-mapping="{{ $gis.dataMapping }}"
+  data-strict="{{ $gis.dataStrict }}"
+  data-reactions-enabled="{{ $gis.dataReactionsEnabled }}"
+  data-emit-metadata="{{ $gis.dataEmitMetadata }}"
+  data-input-position="{{ $gis.dataInputPosition }}"
+  data-theme="preferred_color_scheme"
+  data-lang="{{ $gis.dataLang }}"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
